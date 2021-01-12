@@ -1,5 +1,7 @@
 <?php
 
-  phpinfo();
-
 ?>
+
+<div>
+  Intro page
+</div>
