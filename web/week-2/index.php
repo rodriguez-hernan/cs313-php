@@ -43,6 +43,15 @@ include("../header.php");
               Change color
             </button>
         </div>
+        <div class="input-group mb-3">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="toggle-btn"
+            >
+              Toggle div
+            </button>
+        </div>
     </div>
 </body>
 

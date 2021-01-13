@@ -8,9 +8,8 @@ $(document).ready(function(){
         const color = $("#color-input").val();
         $(".first").css('background-color', color)
     });
-});
 
-/* function changeColor() {
-    var color = document.getElementById("color-input").value;
-    document.querySelector(".first").style.backgroundColor = color;
-} */
+    $("#toggle-btn").click(function() {
+        $(".third").fadeToggle("slow");
+    })
+});
