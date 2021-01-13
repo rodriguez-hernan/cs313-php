@@ -39,7 +39,6 @@ include("../header.php");
               class="btn btn-outline-secondary"
               type="button"
               id="change-color-btn"
-              onclick="changeColor()"
             >
               Change color
             </button>

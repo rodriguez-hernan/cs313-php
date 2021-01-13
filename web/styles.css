@@ -3,6 +3,10 @@ body {
     box-sizing: content-box;
 }
 
+.container {
+    margin-top: 25px;
+}
+
 .color-div {
     height: 80px;
     color: white;
