@@ -11,27 +11,28 @@
 include("../header.php");
 ?>
 <body>
-    <h1>Week 2 activity</h1>
-    
-    <div class="color-div first">
-        This is the first div
+    <div class="container">
+        <h1>Week 2 activity</h1>
+        
+        <div class="color-div first">
+            This is the first div
+        </div>
+        <div class="color-div second">
+            this would be the second
+        </div>
+        <div class="color-div third">
+            and last but not least, the third one
+        </div>
+        
+        <div class="btn">
+            <button id="click-btn" class="btn btn-primary">Click Me!</button>
+        </div>
+        
+        <div class="change-color">
+            <label for="color">Change color</label>
+            <input id="color-input" name="color" type="color" onchange="changeColor()" />
+        </div>
     </div>
-    <div class="color-div second">
-        this would be the second
-    </div>
-    <div class="color-div third">
-        and last but not least, the third one
-    </div>
-    
-    <div class="btn">
-        <button id="click-btn">Click Me!</button>
-    </div>
-    
-    <div class="change-color">
-        <label for="color">Change color</label>
-        <input id="color-input" name="color" type="color" onchange="changeColor()" />
-    </div>
-    
 </body>
 
 <?php
