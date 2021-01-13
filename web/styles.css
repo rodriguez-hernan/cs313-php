@@ -1,0 +1,26 @@
+body {
+    font-size: 14px;
+}
+
+.color-div {
+    height: 80px;
+    color: white;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-div:hover {
+    font-weight: bold;
+}
+
+.first {
+    background-color: red;
+}
+.second {
+    background-color: blue;
+}
+.third {
+    background-color: green;
+}

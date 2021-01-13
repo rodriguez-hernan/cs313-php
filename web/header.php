@@ -2,4 +2,4 @@
 
 ?>
 
-<div>header</div>
+<div class="header"></div>

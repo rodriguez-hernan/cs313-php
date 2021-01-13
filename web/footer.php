@@ -3,4 +3,4 @@
 
 ?>
 
-<div>footer</div>
+<div class="footer"></div>
