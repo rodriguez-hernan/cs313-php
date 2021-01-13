@@ -27,10 +27,23 @@ include("../header.php");
         <div class="btn">
             <button id="click-btn" class="btn btn-primary">Click Me!</button>
         </div>
-        
-        <div class="change-color">
-            <label for="color">Change color</label>
-            <input id="color-input" name="color" type="color" onchange="changeColor()" />
+
+        <div class="input-group mb-3">
+            <input
+              type="color"
+              class="form-control"
+              id="color-input"
+              aria-label="change color"
+              aria-describedby="button-color-change"
+            >
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              id="change-color-btn"
+              onclick="changeColor()"
+            >
+              Change color
+            </button>
         </div>
     </div>
 </body>
