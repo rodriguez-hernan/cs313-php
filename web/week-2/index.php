@@ -31,7 +31,6 @@ include("../header.php");
         <div class="input-group mb-3">
             <input
               type="color"
-              class="form-control"
               id="color-input"
               aria-label="change color"
               aria-describedby="button-color-change"
