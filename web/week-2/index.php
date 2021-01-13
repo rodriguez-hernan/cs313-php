@@ -24,11 +24,11 @@ include("../header.php");
             and last but not least, the third one
         </div>
         
-        <div class="btn-toolbar justify-content-between" role="toolbar">
+        <div class="btn-toolbar justify-content-between" id="toolbar-btns" role="toolbar">
             <div>
                 <button id="click-btn" class="btn btn-primary">Click Me!</button>
             </div>
-            <div>
+            <div class="color-change-container">
                 <input
                   type="color"
                   id="color-input"

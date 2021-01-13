@@ -35,3 +35,12 @@ body {
     height: 50px;
     margin-right: 10px;
 }
+
+#toolbar-btns {
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.color-change-container {
+    display: flex;
+}
