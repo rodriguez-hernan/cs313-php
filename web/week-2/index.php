@@ -5,7 +5,7 @@ include("../header.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 2</title>
-    <link rel="stylesheet"  href='../styles.css'>
+    <link rel="stylesheet" href='../styles.css'>
     <script src='../main.js'></script>
 </head>
 <body>
@@ -29,7 +29,6 @@ include("../header.php");
         <label for="color">Change color</label>
         <input id="color-input" name="color" type="color" onchange="changeColor()" />
     </div>
-    <script src='./main.js'></script>
 </body>
 
 <?php
