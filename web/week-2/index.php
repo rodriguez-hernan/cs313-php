@@ -24,34 +24,36 @@ include("../header.php");
             and last but not least, the third one
         </div>
         
-        <div class="btn">
-            <button id="click-btn" class="btn btn-primary">Click Me!</button>
+        <div class="btn-toolbar justify-content-between" role="toolbar">
+            <div>
+                <button id="click-btn" class="btn btn-primary">Click Me!</button>
+            </div>
+            <div>
+                <input
+                  type="color"
+                  id="color-input"
+                  aria-label="change color"
+                  aria-describedby="button-color-change"
+                >
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="change-color-btn"
+                >
+                  Change color
+                </button>
+            </div>
+            <div>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="toggle-btn"
+                >
+                  Toggle div
+                </button>
+            </div>
         </div>
 
-        <div class="input-group mb-3">
-            <input
-              type="color"
-              id="color-input"
-              aria-label="change color"
-              aria-describedby="button-color-change"
-            >
-            <button
-              class="btn btn-outline-secondary"
-              type="button"
-              id="change-color-btn"
-            >
-              Change color
-            </button>
-        </div>
-        <div class="input-group mb-3">
-            <button
-              type="button"
-              class="btn btn-primary"
-              id="toggle-btn"
-            >
-              Toggle div
-            </button>
-        </div>
     </div>
 </body>
 
