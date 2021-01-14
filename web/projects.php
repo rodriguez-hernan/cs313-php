@@ -12,7 +12,7 @@ include("./header.php");
 ?>
 <body>
   <div class="container">
-   <h1 class="display-1">Hernan Rodriguez</h1>  
+   <h1 class="display-1">Comming soon...</h1>  
 
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -23,7 +23,7 @@ include("./header.php");
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/projects.php">Projects</a>
+              <a class="nav-link active" aria-current="page">Projects</a>
             </li>
           </ul>
         </div>
