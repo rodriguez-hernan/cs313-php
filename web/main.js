@@ -1,6 +1,10 @@
-document.getElementById("click-btn").addEventListener("click", function(){
-    alert("Clicked!");
-})
+
+const clickBtn = document.getElementById("click-btn");
+if (clickBtn) {
+    clickBtn.addEventListener("click", function(){
+        alert("Clicked!");
+    })
+}
 
 
 $(document).ready(function(){
