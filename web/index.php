@@ -29,6 +29,21 @@ include("./header.php");
         </div>
       </div>
     </nav>
+
+    <div class="content">
+      <h3>About me:</h3>
+      <p class="interests">
+      I'm a web developer, currently living in Buenos Aires, Argentina.
+      I have been married for 6 years now, and with my wife we have 2 beautiful children.
+      </p>
+      <br />
+      <p>Here are some of my interests</p>
+      <ul class="interests">
+        <li>Guitars</li>
+        <li>Footbal (soccer)</li>
+        <li>Books!</li>
+      </ul>
+    </div>
   </div>
 <?php
 include("./footer.php");
