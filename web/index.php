@@ -8,7 +8,7 @@
     
 </head>
 <?php
-include("/header.php");
+include("./header.php");
 ?>
 <body>
   <div class="container">
@@ -34,7 +34,7 @@ include("/header.php");
     </nav>
   </div>
 <?php
-include("/footer.php");
+include("./footer.php");
 ?>
 </body>
 </html>
