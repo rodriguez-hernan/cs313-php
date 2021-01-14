@@ -12,7 +12,7 @@ include("./header.php");
 ?>
 <body>
   <div class="container">
-   <h1 class="display-1">Comming soon...</h1>  
+   <h1 class="display-1">Projects and Assignments</h1>  
 
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -29,6 +29,11 @@ include("./header.php");
         </div>
       </div>
     </nav>
+
+    <div class="content">
+      <h3>Comming soon...</h3>
+    </div>
+
   </div>
 <?php
 include("./footer.php");
