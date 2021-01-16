@@ -13,7 +13,7 @@ include("./header.php");
 ?>
 
 <body>
-  <div class="container">
+  <div class="main-container container">
     <h1 class="display-1">Hernan Rodriguez</h1>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,24 +33,28 @@ include("./header.php");
       </div>
     </nav>
 
-    <div class="content">
-      <div>
-        <h3>About me:</h3>
-        <p class="interests">
-          I'm a web developer, currently living in Buenos Aires, Argentina.
-          I have been married for 6 years now, and with my wife we have 2 beautiful children.
-        </p>
-        <br />
-        <p>Here are some of my interests</p>
-        <ul class="interests">
-          <li>Guitars</li>
-          <li>Footbal (soccer)</li>
-          <li>Books!</li>
-        </ul>
+    <div class="content container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <h3>About me:</h3>
+          <p class="interests">
+            I'm a web developer, currently living in Buenos Aires, Argentina.
+            I have been married for 6 years now, and with my wife we have 2 beautiful children.
+          </p>
+          <br />
+          <p>Here are some of my interests</p>
+          <ul class="interests">
+            <li>Guitars</li>
+            <li>Footbal (soccer)</li>
+            <li>Books!</li>
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <aside class="picture-container">
+            <img src="./assets/conAlma.png" alt="picture with my daughter">
+          </aside>
+        </div>
       </div>
-      <aside class="picture-container">
-        <img src="./assets/conAlma.png" alt="picture with my daughter">
-      </aside>
     </div>
   </div>
   <?php

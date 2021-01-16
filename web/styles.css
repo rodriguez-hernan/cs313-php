@@ -3,7 +3,7 @@ body {
     box-sizing: content-box;
 }
 
-.container {
+.main-container {
     margin-top: 25px;
 }
 
@@ -48,7 +48,7 @@ body {
 .footer {
     text-align: center;
     padding: 40px;
-}
+}   
 
 .content {
     padding: 20px;
