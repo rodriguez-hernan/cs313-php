@@ -35,7 +35,7 @@ include("./header.php");
 
     <div class="content container">
       <div class="row">
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-sm-6 col-lg-8">
           <h3>About me:</h3>
           <p class="interests">
             I'm a web developer, currently living in Buenos Aires, Argentina.
@@ -49,7 +49,7 @@ include("./header.php");
             <li>Books!</li>
           </ul>
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-6 col-lg-4">
           <aside class="picture-container">
             <img src="./assets/conAlma.png" alt="picture with my daughter">
           </aside>
