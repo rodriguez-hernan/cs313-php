@@ -31,7 +31,24 @@ include("./header.php");
     </nav>
 
     <div class="content">
-      <h3>Comming soon...</h3>
+        <h3>Assignments</h3>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        CSE 341: Web Backend Development II
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul>
+                            <li><a href="./week-2/index.php">Week 2 - Client side practice</a></li>
+                            <li><a href="./week-3/index.php">Week 3 - Php forms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
   </div>
