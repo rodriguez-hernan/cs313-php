@@ -49,9 +49,10 @@ include("../header.php");
   <div class="row">
     <?php
     foreach($results as $key => $item) {
+      $ingredient = $item["tagname"];
       ?>
         <ul>
-          <?php echo "<li>$item</li>" ?>
+          <?php echo "<li>$ingredient</li>" ?>
         </ul>
       <?php
     }  
