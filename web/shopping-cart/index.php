@@ -33,7 +33,9 @@ include("../header.php");
             <div class="card-body">
               <h5 class="card-title"><?php echo $item["title"] ?></h5>
               <p class="card-text"><?php echo $item["description"] ?></p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <div>
+                
+              </div>
             </div>
           </div>
         </div>

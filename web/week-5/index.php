@@ -21,13 +21,46 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
+$sql = "SELECT ingredienttagid, tagname
+        FROM public.ingredienttag";
 
-$statement = $db->query('SELECT username, password FROM IngredientTag');
+$statement = $db->query($sql);
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-foreach($results as $key => $value) {
-  echo $value . "<br />";
-}
-
 ?>
+<!doctype html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hernan Rodriguez | Web Dev</title>
+  <link rel="stylesheet" href='./styles.css'>
+</head>
+<?php
+include("../header.php");
+?>
+<body>
+
+<h1 class="display-1 browse__header">Ingredients</h1>
+
+<div class="container">
+  <div class="row">
+    <?php
+    foreach($results as $key => $item) {
+      ?>
+        <ul>
+          <?php echo "<li>$item</li>" ?>
+        </ul>
+      <?php
+    }  
+    ?>
+  </div>
+</div>
+
+<script src='./main.js'></script>
+<?php
+include("../footer.php");
+?>
+</body>
+</html>
