@@ -27,6 +27,7 @@ $sql = "SELECT ingredienttagid, tagname
 $statement = $db->query($sql);
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+print_r($results);
 ?>
 <!doctype html>
 <html lang="en">
