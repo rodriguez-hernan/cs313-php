@@ -28,7 +28,7 @@
 					<a class="nav-link active" aria-current="page" href="#">Ideas</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/meal-ideas/newRecipes.php">New Recipe</a>
+					<a class="nav-link" href="/meal-ideas/newRecipe.php">New Recipe</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="/meal-ideas/configuration.php">Configuration</a>
