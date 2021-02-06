@@ -112,9 +112,9 @@ function getMealsAsocByRecipe($recipes) {
 	$master = array();
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
-    $recipeID = $row['recipeID'];
-		$mealTagID = $row['mealTagID'];
-    array_push($master, [ 'recipeID' => $recipeID, 'mealTagID' => $mealTagID ]);
+    $recipeID = $row['recipeid'];
+		$mealTagID = $row['mealtagid'];
+    array_push($master, [ 'recipeid' => $recipeID, 'mealtagid' => $mealTagID ]);
   }
   
   return $master;
@@ -132,9 +132,9 @@ function getIngredientsAsocByRecipe($recipes) {
 	$master = array();
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{
-    $recipeID = $row['recipeID'];
-		$ingredientTagID = $row['ingredientTagID'];
-    array_push($master, [ 'recipeID' => $recipeID, 'ingredientTagID' => $ingredientTagID ]);
+    $recipeID = $row['recipeid'];
+		$ingredientTagID = $row['ingredienttagid'];
+    array_push($master, [ 'recipeid' => $recipeID, 'ingredienttagid' => $ingredientTagID ]);
   }
   
   return $master;

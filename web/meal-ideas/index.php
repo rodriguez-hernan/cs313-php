@@ -10,6 +10,7 @@
 	$ingredients = getAllIngredients();
 	$recipesArray = array();
 	foreach($recipes as $key => $val) {
+		echo "<br />";
 		print_r($val);
 		array_push($recipesArray, $val["id"]);
 	}
@@ -17,7 +18,7 @@
 	$mealAsoc = getMealsAsocByRecipe($recipesArray);
 	$ingredientAsoc = getIngredientsAsocByRecipe($recipesArray);
 
-	print "mealAsoc <br/>";
+	print "<br/>mealAsoc <br/>";
 	print_r($mealAsoc);
 	print "ingredientAsoc <br/>";
 	print_r($ingredientAsoc);
