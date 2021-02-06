@@ -63,7 +63,8 @@ function getAllMeals() {
 	{
     $id = $row['mealtagid'];
 		$meal = $row['tagname'];
-    array_push($master, [ $id => $meal ]);
+    $master[$id] = $meal;
+		// array_push($master, [ $id => $meal ]);
   }
   
   return $master;
@@ -81,7 +82,8 @@ function getAllIngredients() {
 	{
     $id = $row['ingredienttagid'];
 		$ingredient = $row['tagname'];
-    array_push($master, [ $id => $ingredient ]);
+		$master[$id] = $ingredient;
+    // array_push($master, [ $id => $ingredient ]);
   }
   
   return $master;
