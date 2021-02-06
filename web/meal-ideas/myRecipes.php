@@ -42,7 +42,7 @@
 		</header>
 		<main>
 
-      <div class="main-container">
+      <div class="main-container card-grid">
 			
 			<? 
 				foreach($recipes as $key => $res) {

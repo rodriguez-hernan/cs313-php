@@ -41,7 +41,27 @@
 		</header>
 		<main>
 
-			Explore
+		<div class="main-container card-grid">
+			
+			<? 
+				foreach($recipes as $key => $res) {
+
+					?>
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title"><? echo $res["title"]; ?></h5>
+							<p class="card-text"><? echo $res["description"]; ?></p>
+							<a href="#" class="btn btn-secondary btn-delete">Delete</a>
+							<a href="#" class="btn btn-primary btn-modify">Modify</a>
+						</div>
+					</div>
+					<?
+				}
+			
+			?>
+			
+			
+			</div>
 		</main>
 
   </div>

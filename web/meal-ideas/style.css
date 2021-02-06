@@ -12,3 +12,13 @@ header {
   padding: 1rem 0px;
   text-align: center;
 }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.card {
+  margin: 3rem;
+}
