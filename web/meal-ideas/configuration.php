@@ -5,10 +5,6 @@
 
   $meals = getAllMeals();
 	$ingredients = getAllIngredients();
-
-  print_r($meals);
-	print "<br />";
-	print_r($ingredients);
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +13,7 @@
 <head>
   <title>My Recipes</title>
   <?php include("../header.php"); ?>
-	<link rel="stylesheet" href='/styles.css'>
+	<link rel="stylesheet" href='/style.css'>
 </head>
 
 <body>

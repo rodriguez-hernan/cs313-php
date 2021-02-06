@@ -13,7 +13,7 @@
 <head>
   <title>Explore</title>
   <?php include("../header.php"); ?>
-	<link rel="stylesheet" href='/styles.css'>
+	<link rel="stylesheet" href='/style.css'>
 </head>
 
 <body>
@@ -51,8 +51,7 @@
 						<div class="card-body">
 							<h5 class="card-title"><? echo $res["title"]; ?></h5>
 							<p class="card-text"><? echo $res["description"]; ?></p>
-							<a href="#" class="btn btn-secondary btn-delete">Delete</a>
-							<a href="#" class="btn btn-primary btn-modify">Modify</a>
+							<a href="#" class="btn btn-primary btn-modify">Add</a>
 						</div>
 					</div>
 					<?
