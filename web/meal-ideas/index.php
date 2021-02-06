@@ -4,6 +4,22 @@
 	$user = ["id" => 1, "username" => "Russell Nelson", "email" => "russell_n@byui.edu"];
   $_SESSION["user"] = $user;
 
+
+	$recipes = getAllRecipesByUserId($user["id"]);
+	$meals = getAllMeals();
+	$ingredients = getAllIngredients();
+	$recipesArray = array();
+	foreach($recipes as $res) {
+		array_push($recipesArray, $res["id"]);
+	}
+
+	$mealAsoc = getMealsAsocByRecipe($recipesArray);
+	$ingredientAsoc = getIngredientsAsocByRecipe($recipesArray);
+
+	print "mealAsoc <br/>";
+	print_r($mealAsoc);
+	print "ingredientAsoc <br/>";
+	print_r($ingredientAsoc);
 ?>
 
 <!DOCTYPE html>

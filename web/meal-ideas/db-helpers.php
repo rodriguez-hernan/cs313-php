@@ -23,14 +23,11 @@ function getAllRecipesByUserId($id) {
 	$recipeList = array();
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	{		
-
-		print_r($row);
-		print "<br/>";
 		array_push($recipeList, [
 			"id" => $row['recipeid'], 
 			"title" => $row['title'], 
-			"description" => $row['processDescription'], 
-			"userName" => $row['userName']
+			"description" => $row['processdescription'], 
+			"userName" => $row['username']
 			]);
 	}
 	return $recipeList;
