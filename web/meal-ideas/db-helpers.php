@@ -106,7 +106,7 @@ function getMealsAsocByRecipe($recipes) {
 	global $db;
 	$recipeIds = implode("','", $recipes);
   $sql = "SELECT * FROM recipemealtag WHERE recipeid IN ('$recipeIds')";
-	echo $sql; 
+	//echo $sql; 
 	$statement = $db->prepare($sql);
 	$statement->execute();
 	$row = $statement->fetch(PDO::FETCH_ASSOC);
@@ -126,7 +126,7 @@ function getIngredientsAsocByRecipe($recipes) {
 	global $db;
 	$recipeIds = implode("','", $recipes);
   $sql = "SELECT * FROM recipeingredienttag WHERE recipeid IN ('$recipeIds')";
-	echo $sql; 
+	//echo $sql; 
 	$statement = $db->prepare($sql);
 	$statement->execute();
 	$row = $statement->fetch(PDO::FETCH_ASSOC);
