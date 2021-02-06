@@ -26,3 +26,14 @@ header {
 .flex {
   display: flex;
 }
+
+.search-btn {
+  background-color: #70A9A1;
+  color: white;
+  height: 178px;
+  border-radius: 50%;
+  font-size: 26px;
+  width: 166px;
+  border: 2px solid blue;
+  box-shadow: 10px 10px 28px -12px rgb(0 0 0 / 75%);
+}
