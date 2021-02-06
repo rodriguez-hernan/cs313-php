@@ -22,7 +22,7 @@
 					<a class="nav-link" href="/meal-ideas/explore.php">Explore</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/meal-ideas/myRecipe.php">My Recipes</a>
+					<a class="nav-link" href="/meal-ideas/myRecipes.php">My Recipes</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="/meal-ideas/index.php">Ideas</a>
