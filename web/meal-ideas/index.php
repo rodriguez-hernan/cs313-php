@@ -58,7 +58,27 @@
 		</header>
 		<main>
 
-			Meal Ideas
+			<div class="main-container">
+
+				<div class="filters">
+					<div class="ingredient-checks">
+						<?
+							foreach($ingredients as $key => $val) {
+								$id = "ingredient-check-" . $key;
+								?>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox" id="<? echo $id ?>" value="<? echo $key ?>">
+										<label class="form-check-label" for="<? echo $id ?>"><? echo $val ?></label>
+									</div>
+								<?
+							}
+						?>
+					</div>
+					<div class="meal-checks">
+					
+					</div>
+				</div>
+			</div>
 		</main>
 
   </div>
