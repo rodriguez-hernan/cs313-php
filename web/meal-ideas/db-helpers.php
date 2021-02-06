@@ -45,7 +45,7 @@ function getAllRecipes() {
 		array_push($recipeList, [
 			"id" => $row['recipeid'], 
 			"title" => $row['title'], 
-			"description" => $row['processDescription'],
+			"description" => $row['processdescription'],
 			]);
 	}
 	return $recipeList;
