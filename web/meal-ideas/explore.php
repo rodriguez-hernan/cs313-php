@@ -1,7 +1,9 @@
 <?php
   session_start();
     
+	$recipes = getAllRecipes();
 
+	print_r($recipes);	
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +15,7 @@
 </head>
 
 <body>
-  <div>
+  <div class="container">
 		<header>
 			<h1>Explore</h1>
 

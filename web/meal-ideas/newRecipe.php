@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <div>
+  <div class="container">
 		<header>
 			<h1>New Recipe</h1>
 
@@ -37,7 +37,7 @@
 		</header>
 		<main>
 
-      New Recipe
+      Comming Soon...
 		</main>
 
   </div>

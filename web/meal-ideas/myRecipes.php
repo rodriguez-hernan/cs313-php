@@ -1,7 +1,9 @@
 <?php
   session_start();
-    
+	$user = $_SESSION["user"];
+	$recipes = getAllRecipesByUserId($user["id"]);
 
+	print_r($recipes);
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +15,7 @@
 </head>
 
 <body>
-  <div>
+  <div class="container">
 		<header>
 			<h1>My Recipes</h1>
 

@@ -1,6 +1,7 @@
 <?php
   session_start();
-    
+	$user = ["id" => 1, "username" => "Russell Nelson", "email" => "russell_n@byui.edu"];
+  $_SESSION["user"] = $user;
 
 ?>
 
@@ -13,9 +14,9 @@
 </head>
 
 <body>
-  <div>
+  <div class="container">
 		<header>
-			<h1>Meal ideas!</h1>
+			<h1 class="header-title">Meal ideas!</h1>
 
 			<ul class="nav">
 				<li class="nav-item">

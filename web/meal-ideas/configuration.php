@@ -4,7 +4,11 @@
 
 
   $meals = getAllMeals();
+	$ingredients = getAllIngredients();
+
   print_r($meals);
+	print "<br />";
+	print_r($ingredients);
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +20,7 @@
 </head>
 
 <body>
-  <div>
+  <div class="container">
 		<header>
 			<h1>Configuration</h1>
 
