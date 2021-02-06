@@ -10,7 +10,7 @@
 <head>
   <title>My Recipes</title>
   <?php include("../header.php"); ?>
-	<link rel="stylesheet" href='/style.css'>
+	<link rel="stylesheet" href='./style.css'>
 </head>
 
 <body>
