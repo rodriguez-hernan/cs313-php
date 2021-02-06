@@ -67,7 +67,7 @@
 							foreach($ingredients as $key => $val) {
 								$id = "ingredient-check-" . $key;
 								?>
-									<div class="form-check form-check-inline">
+									<div class="form-check">
 										<input class="form-check-input" type="checkbox" id="<? echo $id ?>" value="<? echo $key ?>">
 										<label class="form-check-label" for="<? echo $id ?>"><? echo $val ?></label>
 									</div>
@@ -81,7 +81,7 @@
 							foreach($meals as $key => $val) {
 								$id = "meal-check-" . $key;
 								?>
-									<div class="form-check form-check-inline">
+									<div class="form-check">
 										<input class="form-check-input" type="checkbox" id="<? echo $id ?>" value="<? echo $key ?>">
 										<label class="form-check-label" for="<? echo $id ?>"><? echo $val ?></label>
 									</div>
