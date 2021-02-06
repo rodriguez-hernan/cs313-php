@@ -1,5 +1,7 @@
 <?php
   session_start();
+	include("db-helpers.php");
+
 	$user = $_SESSION["user"];
 	$recipes = getAllRecipesByUserId($user["id"]);
 

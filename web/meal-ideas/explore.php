@@ -1,6 +1,7 @@
 <?php
   session_start();
-    
+  include("db-helpers.php");
+	
 	$recipes = getAllRecipes();
 
 	print_r($recipes);	

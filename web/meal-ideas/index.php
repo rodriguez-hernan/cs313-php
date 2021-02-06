@@ -1,5 +1,6 @@
 <?php
   session_start();
+	include("db-helpers.php");
 	$user = ["id" => 1, "username" => "Russell Nelson", "email" => "russell_n@byui.edu"];
   $_SESSION["user"] = $user;
 
