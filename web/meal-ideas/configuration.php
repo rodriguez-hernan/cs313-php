@@ -45,6 +45,37 @@
 		<main>
 
       Configuration
+
+			<div class="config-container">
+				<div>
+					<h3 class="sub-header">Available Ingredients</h3>
+					<ul class="list-group list-group-flush ingredient-list">
+						<?php
+							foreach($ingredients as $key => $val) {
+								?>
+									<li class="list-group-item ingredient">
+										<? echo $val ?>
+									</li>
+								<?php
+							}
+						?>
+					</ul>
+				</div>
+				<div>
+					<h3 class="sub-header">Available Meals</h3>
+					<ul class="list-group list-group-flush ingredient-list">
+						<?php
+							foreach($meals as $key => $val) {
+								?>
+									<li class="list-group-item ingredient">
+										<? echo $val ?>
+									</li>
+								<?php
+							}
+						?>
+					</ul>
+				</div>
+			</div>
 		</main>
 
   </div>
