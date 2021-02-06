@@ -58,7 +58,7 @@
 		</header>
 		<main>
 
-			<div class="main-container">
+			<div class="main-container flex">
 
 				<div class="filters">
 					<div class="ingredient-checks">
@@ -89,6 +89,12 @@
 							}
 						?>
 					</div>
+				</div>
+
+				<div class="search-btn">
+					<button type="button" class="btn btn-lg search-btn">
+						Random meal!
+					</button>
 				</div>
 			</div>
 		</main>

@@ -22,3 +22,7 @@ header {
 .card {
   margin: 3rem;
 }
+
+.flex {
+  display: flex;
+}
