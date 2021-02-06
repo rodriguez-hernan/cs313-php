@@ -10,7 +10,7 @@
 	$ingredients = getAllIngredients();
 	$recipesArray = array();
 	foreach($recipes as $key => $val) {
-		echo $val;
+		print_r($val);
 		array_push($recipesArray, $val["id"]);
 	}
 

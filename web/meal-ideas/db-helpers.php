@@ -102,7 +102,7 @@ function getUserByEmail($email) {
 
 function getMealsAsocByRecipe($recipes) {
 	global $db;
-	$recipeIds = implode("','", $array);
+	$recipeIds = implode("','", $recipes);
   $sql = "SELECT * FROM recipemealtag WHERE recipeid IN ('$recipeIds')";
 	echo $sql; 
 	$statement = $db->prepare($sql);
@@ -122,7 +122,7 @@ function getMealsAsocByRecipe($recipes) {
 
 function getIngredientsAsocByRecipe($recipes) {
 	global $db;
-	$recipeIds = implode("','", $array);
+	$recipeIds = implode("','", $recipes);
   $sql = "SELECT * FROM recipeingredienttag WHERE recipeid IN ('$recipeIds')";
 	echo $sql; 
 	$statement = $db->prepare($sql);
