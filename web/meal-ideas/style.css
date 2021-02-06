@@ -1,0 +1,14 @@
+.config-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5rem;
+}
+
+.nav {
+  justify-content: center;
+}    
+
+header {
+  padding: 1rem 0px;
+  text-align: center;
+}

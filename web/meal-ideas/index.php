@@ -30,6 +30,7 @@
 <head>
   <title>Meal Ideas</title>
   <?php include("../header.php"); ?>
+	<link rel="stylesheet" href='/styles.css'>
 </head>
 
 <body>

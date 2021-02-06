@@ -14,6 +14,7 @@
 <head>
   <title>My Recipes</title>
   <?php include("../header.php"); ?>
+	<link rel="stylesheet" href='/styles.css'>
 </head>
 
 <body>
@@ -41,7 +42,27 @@
 		</header>
 		<main>
 
-      My Recipes
+      <div class="main-container">
+			
+			<? 
+				foreach($recipes as $key => $res) {
+
+					?>
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title"><? echo $res["title"]; ?></h5>
+							<p class="card-text"><? echo $res["description"]; ?></p>
+							<a href="#" class="btn btn-secondary btn-delete">Delete</a>
+							<a href="#" class="btn btn-primary btn-modify">Modify</a>
+						</div>
+					</div>
+					<?
+				}
+			
+			?>
+			
+			
+			</div>
 		</main>
 
   </div>

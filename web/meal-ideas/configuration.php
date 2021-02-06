@@ -17,6 +17,7 @@
 <head>
   <title>My Recipes</title>
   <?php include("../header.php"); ?>
+	<link rel="stylesheet" href='/styles.css'>
 </head>
 
 <body>
@@ -43,8 +44,6 @@
 			</ul>
 		</header>
 		<main>
-
-      Configuration
 
 			<div class="config-container">
 				<div>
@@ -80,6 +79,7 @@
 
   </div>
   <?php include("../footer.php"); ?>
+	<script src='/main.js'></script>
 </body>
 
 </html>
