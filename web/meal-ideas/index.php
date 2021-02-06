@@ -9,8 +9,9 @@
 	$meals = getAllMeals();
 	$ingredients = getAllIngredients();
 	$recipesArray = array();
-	foreach($recipes as $res) {
-		array_push($recipesArray, $res["id"]);
+	foreach($recipes as $key => $val) {
+		echo $val;
+		array_push($recipesArray, $val["id"]);
 	}
 
 	$mealAsoc = getMealsAsocByRecipe($recipesArray);
