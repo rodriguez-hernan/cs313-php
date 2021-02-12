@@ -61,55 +61,55 @@
 			<div class="main-container">
 				<div class="row justify-content-md-center">
 				<form method="POST">
-				<div class="form-container">
-					<div class="col col-md-4">
-						<div class="filters">
-							<div class="meal-checks">
-									<h4>Meals</h4>
+					<div class="flex form-container">
+						<div class="col col-md-4">
+							<div class="filters">
+								<div class="meal-checks">
+										<h4>Meals</h4>
+										<?
+										foreach($meals as $key => $val) {
+											$id = "meal-check-" . $key;
+											?>
+												<div class="form-check">
+													<input class="form-check-input" name="meal_list[]" type="checkbox" id="<? echo $id ?>" value="<? echo $key ?>">
+													<label class="form-check-label" for="<? echo $id ?>"><? echo $val ?></label>
+												</div>
+											<?
+										}
+									?>
+								</div>
+								<div class="ingredient-checks">
+									<h4>Ingredients</h4>
 									<?
-									foreach($meals as $key => $val) {
-										$id = "meal-check-" . $key;
-										?>
-											<div class="form-check">
-												<input class="form-check-input" name="meal_list[]" type="checkbox" id="<? echo $id ?>" value="<? echo $key ?>">
-												<label class="form-check-label" for="<? echo $id ?>"><? echo $val ?></label>
-											</div>
-										<?
-									}
-								?>
-							</div>
-							<div class="ingredient-checks">
-								<h4>Ingredients</h4>
-								<?
-									foreach($ingredients as $key => $val) {
-										$id = "ingredient-check-" . $key;
-										?>
-											<div class="form-check">
-												<input class="form-check-input" name="ingredient_list[]" type="checkbox" id="<? echo $id ?>" value="<? echo $key ?>">
-												<label class="form-check-label" for="<? echo $id ?>"><? echo $val ?></label>
-											</div>
-										<?
-									}
-								?>
+										foreach($ingredients as $key => $val) {
+											$id = "ingredient-check-" . $key;
+											?>
+												<div class="form-check">
+													<input class="form-check-input" name="ingredient_list[]" type="checkbox" id="<? echo $id ?>" value="<? echo $key ?>">
+													<label class="form-check-label" for="<? echo $id ?>"><? echo $val ?></label>
+												</div>
+											<?
+										}
+									?>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="col col-md-4">
-						<div class="search-btn">
-							<button type="submit" class="btn btn-lg search-btn">
-								Random meal!
-							</button>
+						<div class="col col-md-4">
+							<div class="search-btn">
+								<button type="submit" class="btn btn-lg search-btn">
+									Random meal!
+								</button>
+							</div>
+						</div>
+						<div class="col col-md-4">
+							<div id="random-recipe" class='<? echo $randomRecipeCss; ?>'>
+							
+							</div>
 						</div>
 					</div>
-				</div>
 				</form>
 
-					<div class="col col-md-4">
-						<div id="random-recipe" class='<? echo $randomRecipeCss; ?>'>
-						
-						</div>
-					</div>
 
 				</div>
 
