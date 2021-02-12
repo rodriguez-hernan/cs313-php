@@ -61,6 +61,7 @@
 			<div class="main-container">
 				<div class="row justify-content-md-center">
 				<form method="POST">
+				<div class="form-container">
 					<div class="col col-md-4">
 						<div class="filters">
 							<div class="meal-checks">
@@ -101,6 +102,7 @@
 							</button>
 						</div>
 					</div>
+				</div>
 				</form>
 
 					<div class="col col-md-4">
