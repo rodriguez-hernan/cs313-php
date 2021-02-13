@@ -4,6 +4,7 @@
 	$user = ["id" => 1, "username" => "Russell Nelson", "email" => "russell_n@byui.edu"];
   $_SESSION["user"] = $user;
 
+	print_r($_POST);
 
 	$recipes = getAllRecipesByUserId($user["id"]);
 	$meals = getAllMeals();
@@ -17,6 +18,7 @@
 	$ingredientAsoc = getIngredientsAsocByRecipe($recipesArray);
 
 	$randomRecipeCss = "no-recipe";
+	$formSubmitText = "Get idea";
 
 /* 	print "<br/>mealAsoc <br/>";
 	print_r($mealAsoc);
@@ -98,7 +100,7 @@
 						<div class="col col-md-4">
 							<div class="search-btn">
 								<button type="submit" class="btn btn-lg search-btn">
-									Random meal!
+									<? echo $formSubmitText; ?>
 								</button>
 							</div>
 						</div>
