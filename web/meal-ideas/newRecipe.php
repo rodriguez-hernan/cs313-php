@@ -56,14 +56,18 @@
 
       <div>
         <form id="new-recipe-form" method="POST">
-          <div class="mb-3">
+				<div class="row">
+          <div class="mb-3 col-xs-6">
             <label for="recipe-title" class="form-label">Recipe Title</label>
             <input type="text" class="form-control" id="recipe-title" aria-describedby="recipeTitle" name="title">
           </div>
-          <div class="mb-3">
+				</div>
+				<div class="row">
+          <div class="mb-3 col-xs-6">
             <label for="recipe-process" class="form-label">Recipe steps or comments</label>
             <textarea class="form-control" name="description" rows="4" cols="50" id="recipe-process"></textarea>
           </div>
+				</div>
 
           <div class="mb-3 form-check">
 
