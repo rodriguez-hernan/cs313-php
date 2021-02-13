@@ -142,7 +142,7 @@ function getIngredientsAsocByRecipe($recipes) {
   return $master;
 }
 
-function insertNewRecipe($title, $description, $meals, $ingredients) {
+function insertNewRecipe($title, $description, $meals, $ingredients, $userId) {
 	global $db;
   $sqlRecipe = "INSERT INTO Recipe (title, processDescription) values ('$title', '$description')";
 	
@@ -150,7 +150,11 @@ function insertNewRecipe($title, $description, $meals, $ingredients) {
 	$stmt->execute();
 	$id = $db->lastInsertId();
 
-	$sqlMeals = "INSERT INTO RecipeMealTag (recipeID, mealTagID) values "; //  ('$id', '$description')";
+	$sqlUser = "INSERT INTO UserRecipe (userID, recipeID) values ($userId, $id)";
+	$stmt = $db->prepare($sqlUser);
+	$stmt->execute();
+
+	$sqlMeals = "INSERT INTO RecipeMealTag (recipeID, mealTagID) values ";
 	if ($meals) {
 		foreach ($meals as $key => $value) {
 			$sqlMeals = $sqlMeals + "('$id', '$value'),";
@@ -160,7 +164,7 @@ function insertNewRecipe($title, $description, $meals, $ingredients) {
 		$stmt->execute();
 	}
 
-	$sqlIngredients = "INSERT INTO recipeIngredientTag (recipeID, ingredientTagID) values "; //  ('$id', '$description')";
+	$sqlIngredients = "INSERT INTO recipeIngredientTag (recipeID, ingredientTagID) values ";
 	if ($ingredients) {
 		foreach ($ingredients as $key => $value) {
 			$sqlIngredients = $sqlIngredients + "('$id', '$value'),";
