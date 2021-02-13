@@ -136,6 +136,7 @@
 			$("#update-res-title").val(title);
 			$("#header-update-res-title").html(title);
 
+			$("#modify-modal").modal('show');
 		})
 
 	</script>
