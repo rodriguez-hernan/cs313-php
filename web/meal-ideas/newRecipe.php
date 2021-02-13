@@ -2,7 +2,21 @@
   session_start();
   include("db-helpers.php");
 
+	$userId = $_SESSION["user"]["id"];
+
+	echo "User id" . $userId;
+
 	print_r($_POST);
+	if (isset($_POST['submit'])) {
+		$title = $_POST['title'];
+		$description = $_POST['description'];
+		$meal_list = $_POST['meal_list'];
+		$ingredient_list = $_POST['ingredient_list'];
+		
+		insertNewRecipe($title, $description, $meal_list, $ingredient_list);
+		header("Location: ./myRecipes.php");
+		exit();
+	}
 
 	$meals = getAllMeals();
 	$ingredients = getAllIngredients();
@@ -88,7 +102,8 @@
 								</div>
 							</div>
           </div>
-          
+        
+					<input type="hidden" name="submit" value="true" />
 					<button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>

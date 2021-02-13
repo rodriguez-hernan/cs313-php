@@ -142,4 +142,33 @@ function getIngredientsAsocByRecipe($recipes) {
   return $master;
 }
 
+function insertNewRecipe($title, $description, $meals, $ingredients) {
+	global $db;
+  $sqlRecipe = "INSERT INTO Recipe (title, processDescription) values ('$title', '$description')";
+	
+	$stmt = $db->prepare($sqlRecipe);
+	$stmt->execute();
+	$id = $db->lastInsertId();
+
+	$sqlMeals = "INSERT INTO RecipeMealTag (recipeID, mealTagID) values "; //  ('$id', '$description')";
+	if ($meals) {
+		foreach ($meals as $key => $value) {
+			$sqlMeals = $sqlMeals + "('$id', '$value'),";
+		}
+		$sqlMeals = substr($sqlMeals, 0, -1);
+		$stmt = $db->prepare($sqlRecipe);
+		$stmt->execute();
+	}
+
+	$sqlIngredients = "INSERT INTO recipeIngredientTag (recipeID, ingredientTagID) values "; //  ('$id', '$description')";
+	if ($ingredients) {
+		foreach ($ingredients as $key => $value) {
+			$sqlIngredients = $sqlIngredients + "('$id', '$value'),";
+		}
+		$sqlMeals = substr($sqlIngredients, 0, -1);
+		$stmt = $db->prepare($sqlRecipe);
+		$stmt->execute();
+	}
+}
+
 ?>
