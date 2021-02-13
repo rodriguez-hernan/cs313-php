@@ -4,6 +4,10 @@
 
 	print_r($_POST);
 
+	if (isset($_POST) && isset($_POST["action"])) {
+		echo $_POST["action"];
+	}
+
 	$user = $_SESSION["user"];
 	$recipes = getAllRecipesByUserId($user["id"]);
 
@@ -164,7 +168,8 @@
 				url: "myRecipes.php",
 				data: data,
 				success: function(data) {
-					console.log("Updated!");
+					console.log("Updated!", data);
+					$("#modify-modal").modal('hide');
 				},
 			});
 
