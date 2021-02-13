@@ -101,7 +101,7 @@
 	<script>
 		$("#new-recipe-form").submit(function( event ) {
 
-			// event.preventDefault();
+			event.preventDefault();
 			var $form = $( this ),
 					title = $form.find( "input[name='title']" ).val(),
 					description = $form.find( "input[name='description']" ).val(),
