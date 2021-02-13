@@ -108,8 +108,23 @@
 					mealList = $form.find( "input[name='meal_list']" ).val(),
 					ingredientList = $form.find( "input[name='ingredient_list']" ).val();
 		
+			const data = {
+				"title": title,
+				"description": description,
+				"mealList": mealList,
+				"ingredientList": ingredientList
+			};
+
+			console.table({data});
 			//Ajax Function to send a get request
-			$.ajax({
+			var posting = $.post( "", data );
+
+			// Put the results in a div
+			posting.done(function( data ) {
+					console.log("POSTED!");
+			});;
+
+			/* $.ajax({
 				type: "POST",
 				data: {
 					"title": title,
@@ -122,7 +137,7 @@
 						console.log("POSTED!");
 						// $( "#result" ).empty().append( response );
 				}
-			});
+			}); */
 		})
 	</script>
 </body>
