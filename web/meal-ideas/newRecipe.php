@@ -52,7 +52,7 @@
           </div>
           <div class="mb-3">
             <label for="recipe-process" class="form-label">Recipe steps or comments</label>
-            <textarea class="form-control" name="description" rows="4" cols="50" id="recipe-process">
+            <textarea class="form-control" name="description" rows="4" cols="50" id="recipe-process"></textarea>
           </div>
 
           <div class="mb-3 form-check">
