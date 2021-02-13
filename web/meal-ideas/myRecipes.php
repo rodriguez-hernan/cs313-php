@@ -129,9 +129,12 @@
 			const id = $(this).data("id");
 			console.log("update => ", id);
 
-			const title = $(this).siblings( ".card-title" );
-			const description = $(this).siblings( ".card-text" );
-
+			const title = $(this).siblings( ".card-title" ).val();
+			const description = $(this).siblings( ".card-text" ).val();
+			
+			console.log("title", title)
+			console.log("description", description)
+			
 			$("#recipe-process").val(description);
 			$("#update-res-title").val(title);
 			$("#header-update-res-title").html(title);
