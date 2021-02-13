@@ -167,8 +167,8 @@
 				type: "POST",
 				url: "myRecipes.php",
 				data: data,
-				success: function(data) {
-					console.log("Updated!", data);
+				success: function(result) {
+					console.log("Updated!", result);
 					$("#modify-modal").modal('hide');
 				},
 			});
