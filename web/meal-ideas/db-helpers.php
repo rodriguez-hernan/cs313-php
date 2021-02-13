@@ -151,30 +151,30 @@ function insertNewRecipe($title, $description, $meals, $ingredients, $userId) {
 	$id = $db->lastInsertId();
 
 	$sqlUser = "INSERT INTO UserRecipe (userid, recipeid) values ($userId, $id)";
-	$stmt = $db->prepare($sqlUser);
-	$stmt->execute();
+	$stmt2 = $db->prepare($sqlUser);
+	$stmt2->execute();
 
 	$sqlMeals = "INSERT INTO RecipeMealTag (recipeid, mealtagid) values ";
 	if ($meals) {
 		foreach ($meals as $key => $value) {
-			$sqlMeals = $sqlMeals + "('$id', '$value'),";
+			$sqlMeals = $sqlMeals . "('$id', '$value'),";
 		}
 
 		$sqlMeals = substr($sqlMeals, 0, -1);
 		echo "<br/> sqlMeals: " . $sqlMeals;
-		$stmt = $db->prepare($sqlMeals);
-		$stmt->execute();
+		$stmt3 = $db->prepare($sqlMeals);
+		$stmt3->execute();
 	}
 
 	$sqlIngredients = "INSERT INTO recipeIngredientTag (recipeid, ingredienttagid) values ";
 	if ($ingredients) {
 		foreach ($ingredients as $key => $value) {
-			$sqlIngredients = $sqlIngredients + "('$id', '$value'),";
+			$sqlIngredients = $sqlIngredients . "('$id', '$value'),";
 		}
 		$sqlIngredients = substr($sqlIngredients, 0, -1);
 		echo "<br/> sqlIngredients: " . $sqlIngredients;
-		$stmt = $db->prepare($sqlIngredients);
-		$stmt->execute();
+		$stmt4 = $db->prepare($sqlIngredients);
+		$stmt4->execute();
 	}
 }
 
