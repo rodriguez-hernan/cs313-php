@@ -129,8 +129,8 @@
 			const id = $(this).data("id");
 			console.log("update => ", id);
 
-			const title = $(this).siblings( ".card-title" ).val();
-			const description = $(this).siblings( ".card-text" ).val();
+			const title = $(this).siblings( ".card-title" ).text();
+			const description = $(this).siblings( ".card-text" ).text();
 			
 			console.log("title", title)
 			console.log("description", description)
