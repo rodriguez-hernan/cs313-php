@@ -69,7 +69,7 @@
           </div>
 				</div>
 
-          <div class="mb-3 form-check">
+          <div class="mb-3 col-6 form-check">
 
 						<div class="filters flex">
 								<div class="meal-checks">

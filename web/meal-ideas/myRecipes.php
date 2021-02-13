@@ -5,7 +5,7 @@
 	$user = $_SESSION["user"];
 	$recipes = getAllRecipesByUserId($user["id"]);
 
-	//print_r($recipes);
+	print_r($recipes);
 ?>
 
 <!DOCTYPE html>

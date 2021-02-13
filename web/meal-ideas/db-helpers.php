@@ -161,7 +161,7 @@ function insertNewRecipe($title, $description, $meals, $ingredients, $userId) {
 		}
 
 		$sqlMeals = substr($sqlMeals, 0, -1);
-		echo "<br/> sqlMeals: " . $sqlMeals;
+		//echo "<br/> sqlMeals: " . $sqlMeals;
 		$stmt3 = $db->prepare($sqlMeals);
 		$stmt3->execute();
 	}
@@ -172,7 +172,7 @@ function insertNewRecipe($title, $description, $meals, $ingredients, $userId) {
 			$sqlIngredients = $sqlIngredients . "('$id', '$value'),";
 		}
 		$sqlIngredients = substr($sqlIngredients, 0, -1);
-		echo "<br/> sqlIngredients: " . $sqlIngredients;
+		//echo "<br/> sqlIngredients: " . $sqlIngredients;
 		$stmt4 = $db->prepare($sqlIngredients);
 		$stmt4->execute();
 	}
