@@ -2,10 +2,12 @@
   session_start();
 	include("db-helpers.php");
 
+	print_r($_POST);
+
 	$user = $_SESSION["user"];
 	$recipes = getAllRecipesByUserId($user["id"]);
 
-	print_r($recipes);
+	// print_r($recipes);
 ?>
 
 <!DOCTYPE html>
@@ -151,10 +153,20 @@
 			const description = $("#recipe-process").val();
 			const title = $("#update-res-title").val();
 			const id = $("#rec-id-update").val();
+			const action = "update";
 			const data = {
-				id, title, description
+				id, title, description, action,
 			}
 			console.table("UPDATE", data );
+
+			$.ajax({
+				type: "POST",
+				url: "myRecipes.php",
+				data: data,
+				success: function(data) {
+					console.log("Updated!");
+				},
+			});
 
 		})
 
