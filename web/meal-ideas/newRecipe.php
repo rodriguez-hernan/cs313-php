@@ -112,10 +112,10 @@
 			$.ajax({
 				type: "POST",
 				data: {
-					title,
-					description,
-					mealList,
-					ingredientList
+					"title": title,
+					"description": description,
+					"mealList": mealList,
+					"ingredientList": ingredientList
 				},
 				success: function(response){
 						//if request if made successfully then the response represent the data
