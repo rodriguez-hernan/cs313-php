@@ -2,11 +2,11 @@
   session_start();
   include("db-helpers.php");
 
-	$userId = $_SESSION["user"]["id"];
+	$user = $_SESSION["user"];
 
 	print_r($_SESSION);
 
-	echo "<br/> User id " . $userId;
+	echo "<br/> User id " . $user["id"];
 
 	print_r($_POST);
 	if (isset($_POST['submit'])) {
