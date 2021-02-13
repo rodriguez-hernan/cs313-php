@@ -4,7 +4,9 @@
 
 	$userId = $_SESSION["user"]["id"];
 
-	echo "User id" . $userId;
+	print_r($userId);
+
+	echo "<br/> User id " . $userId;
 
 	print_r($_POST);
 	if (isset($_POST['submit'])) {
