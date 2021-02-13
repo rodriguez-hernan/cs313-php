@@ -103,12 +103,13 @@
 							</div>
 							<div class="mb-3 col-6">
 								<label for="recipe-process" class="form-label">Recipe steps or comments</label>
-								<textarea class="form-control" name="description" rows="3" cols="30" id="recipe-process"></textarea>
+								<textarea class="form-control" name="description" rows="4" cols="50" id="recipe-process"></textarea>
 							</div>
 						</div>
 						<div class="modal-footer">
+							<input type="hidden" id="rec-id-update" value="">
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Update</button>
+							<button type="button" class="btn btn-primary" id="update-recipe">Update</button>
 						</div>
 					</div>
 				</div>
@@ -125,9 +126,12 @@
 			$("#delete-res-id").html(id);
 			$("#delete-modal").modal('show');
 		})
+
 		$(".btn-update").click(function() {
 			const id = $(this).data("id");
 			console.log("update => ", id);
+
+			$("#rec-id-update").val(id);
 
 			const title = $(this).siblings( ".card-title" ).text();
 			const description = $(this).siblings( ".card-text" ).text();
@@ -140,6 +144,18 @@
 			$("#header-update-res-title").html(title);
 
 			$("#modify-modal").modal('show');
+		});
+
+		$("#update-recipe").click(function() {
+
+			const description = $("#recipe-process").val();
+			const title = $("#update-res-title").val();
+			const id = $("#rec-id-update").val();
+			const data = {
+				id, title, description
+			}
+			console.table("UPDATE", data );
+
 		})
 
 	</script>
