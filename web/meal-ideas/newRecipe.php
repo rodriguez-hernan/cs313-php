@@ -45,7 +45,7 @@
       <h4>Add a new recipe to your list!</h4>
 
       <div>
-        <form id="new-recipe-form">
+        <form id="new-recipe-form" method="POST">
           <div class="mb-3">
             <label for="recipe-title" class="form-label">Recipe Title</label>
             <input type="text" class="form-control" id="recipe-title" aria-describedby="recipeTitle" name="title">
@@ -99,12 +99,12 @@
   <?php include("../footer.php"); ?>
 
 	<script>
-		$("#new-recipe-form").submit(function( event ) {
+		/* $("#new-recipe-form").submit(function( event ) {
 
 			event.preventDefault();
 			var $form = $( this ),
 					title = $form.find( "input[name='title']" ).val(),
-					description = $form.find( "input[name='description']" ).val(),
+					description = $( "#recipe-process" ).val(),
 					mealList = $form.find( "input[name='meal_list']" ).val(),
 					ingredientList = $form.find( "input[name='ingredient_list']" ).val();
 		
@@ -138,7 +138,7 @@
 						// $( "#result" ).empty().append( response );
 				}
 			}); */
-		})
+		}) */
 	</script>
 </body>
 
