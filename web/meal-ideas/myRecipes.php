@@ -87,6 +87,32 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- Modify Modal -->
+			<div class="modal fade" id="modify-modal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="delete-modal-title"><span id="header-update-res-title"></span></h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div class="mb-3 col-6">
+								<label for="recipe-title" class="form-label">Recipe Title</label>
+								<input type="text" class="form-control" id="update-res-title" aria-describedby="recipeTitle" name="title">
+							</div>
+							<div class="mb-3 col-6">
+								<label for="recipe-process" class="form-label">Recipe steps or comments</label>
+								<textarea class="form-control" name="description" rows="3" cols="30" id="recipe-process"></textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Update</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 
   </div>
@@ -102,6 +128,13 @@
 		$(".btn-update").click(function() {
 			const id = $(this).data("id");
 			console.log("update => ", id);
+
+			const title = $(this).siblings( ".card-title" );
+			const description = $(this).siblings( ".card-text" );
+
+			$("#recipe-process").val(description);
+			$("#update-res-title").val(title);
+			$("#header-update-res-title").html(title);
 
 		})
 
