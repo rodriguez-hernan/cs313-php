@@ -4,7 +4,7 @@
 
 	$userId = $_SESSION["user"]["id"];
 
-	print_r($userId);
+	print_r($_SESSION);
 
 	echo "<br/> User id " . $userId;
 
