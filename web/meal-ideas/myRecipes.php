@@ -4,8 +4,9 @@
 
 	print_r($_POST);
 
-	if (isset($_POST) && isset($_POST["action"])) {
-		echo $_POST["action"];
+	if (isset($_POST) && isset($_POST["delete"])) {
+		$id = $_POST["id"];
+		deleteRecipe($id);
 	}
 
 	$user = $_SESSION["user"];
@@ -97,8 +98,9 @@
 							<span id="delete-res-id"></span>
 						</div>
 						<div class="modal-footer">
+							<input type="hidden" name="id" id="delete-recipe-id">
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Delete</button>
+							<button type="button" class="btn btn-primary" id="delete-recipe">Delete</button>
 						</div>
 					</div>
 				</div>
@@ -160,60 +162,51 @@
 		console.log("delete => ", id);
 
 		$("#delete-res-id").html(id);
+		$("#delete-recipe-id").val(id);
 		$("#delete-modal").modal('show');
 	}
 
+	$("#update-recipe").click(function() {
 
-		/* $(".btn-delete").click(function() {
-			const id = $(this).data("id");
-			console.log("delete => ", id);
+		const description = $("#recipe-process").val();
+		const title = $("#update-res-title").val();
+		const id = $("#rec-id-update").val();
+		const action = "update";
+		const data = {
+			id, title, description, action,
+		}
+		// console.table("UPDATE", data );
 
-			$("#delete-res-id").html(id);
-			$("#delete-modal").modal('show');
-		}) */
+		const cardId = `#card-${id}`;
+		$.ajax({
+			type: "POST",
+			url: "update-recipe.php",
+			data: data,
+			success: function(result) {
+				$(cardId).empty().append(result);
+				$("#modify-modal").modal('hide');
+			},
+		});
 
-		/* $(".btn-update").click(function() {
-			const id = $(this).data("id");
-			console.log("update => ", id);
+	});
 
-			$("#rec-id-update").val(id);
+	$("#delete-recipe").click(function() {
+		const id = $("#delete-recipe-id").val();
+		const action = "delete";
+		const data = {id, action};
 
-			const title = $(this).siblings( ".card-title" ).text();
-			const description = $(this).siblings( ".card-text" ).text();
-			
-			console.log("title", title)
-			console.log("description", description)
-			
-			$("#recipe-process").val(description);
-			$("#update-res-title").val(title);
-			$("#header-update-res-title").html(title);
+		const cardId = `#card-${id}`;
+		$.ajax({
+			type: "POST",
+			url: "update-recipe.php",
+			data: data,
+			success: function(result) {
+				$(cardId).remove();
+				$("#delete-modal").modal('hide');
+			},
+		});
 
-			$("#modify-modal").modal('show');
-		}); */
-
-		$("#update-recipe").click(function() {
-
-			const description = $("#recipe-process").val();
-			const title = $("#update-res-title").val();
-			const id = $("#rec-id-update").val();
-			const action = "update";
-			const data = {
-				id, title, description, action,
-			}
-			// console.table("UPDATE", data );
-
-			const cardId = `#card-${id}`;
-			$.ajax({
-				type: "POST",
-				url: "update-recipe.php",
-				data: data,
-				success: function(result) {
-					$(cardId).empty().append(result);
-					$("#modify-modal").modal('hide');
-				},
-			});
-
-		})
+	})
 
 	</script>
 </body>
