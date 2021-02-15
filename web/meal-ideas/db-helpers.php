@@ -178,4 +178,12 @@ function insertNewRecipe($title, $description, $meals, $ingredients, $userId) {
 	}
 }
 
+function updateRecipe($id, $title, $description) {
+	global $db;
+	$sql = "UPDATE Recipe SET title = '$title', processdescription = '$description' WHERE recipeid = $id";
+
+	$stmt2 = $db->prepare($sql);
+	$stmt2->execute();
+}
+
 ?>

@@ -54,7 +54,7 @@
 				foreach($recipes as $key => $res) {
 
 					?>
-					<div class="card" style="width: 18rem;">
+					<div class="card" id="card-<? echo $res["id"]; ?>" style="width: 18rem;">
 						<div class="card-body">
 							<h5 class="card-title"><? echo $res["title"]; ?></h5>
 							<p class="card-text"><? echo $res["description"]; ?></p>
@@ -161,14 +161,15 @@
 			const data = {
 				id, title, description, action,
 			}
-			console.table("UPDATE", data );
+			// console.table("UPDATE", data );
 
+			const cardId = `#card-${id}`;
 			$.ajax({
 				type: "POST",
-				url: "myRecipes.php",
+				url: "update-recipe.php",
 				data: data,
 				success: function(result) {
-					console.log("Updated!", result);
+					$(cardId).empty().append(result);
 					$("#modify-modal").modal('hide');
 				},
 			});
