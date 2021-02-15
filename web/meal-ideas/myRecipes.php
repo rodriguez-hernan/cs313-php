@@ -59,10 +59,20 @@
 							<h5 class="card-title"><? echo $res["title"]; ?></h5>
 							<p class="card-text"><? echo $res["description"]; ?></p>
 
-							<button type="button" class="btn btn-secondary btn-delete" data-id="<? echo $res["id"]; ?>">
+							<button
+								type="button"
+								class="btn btn-secondary btn-delete"
+								data-id="<? echo $res["id"]; ?>"
+								onclick="openDeleteModal();"
+							>
 								Delete
 							</button>
-							<button type="button" class="btn btn-primary btn-update" data-id="<? echo $res["id"]; ?>">
+							<button
+								type="button"
+								class="btn btn-primary btn-update"
+								data-id="<? echo $res["id"]; ?>"
+								onclick="openUpdateModal();"
+							>
 								Modify
 							</button>
 						</div>
@@ -125,15 +135,44 @@
   </div>
   <?php include("../footer.php"); ?>
 	<script>
-		$(".btn-delete").click(function() {
+
+	function openUpdateModal() {
+		const id = $(this).data("id");
+		console.log("update => ", id);
+
+		$("#rec-id-update").val(id);
+
+		const title = $(this).siblings( ".card-title" ).text();
+		const description = $(this).siblings( ".card-text" ).text();
+		
+		console.log("title", title)
+		console.log("description", description)
+		
+		$("#recipe-process").val(description);
+		$("#update-res-title").val(title);
+		$("#header-update-res-title").html(title);
+
+		$("#modify-modal").modal('show');
+	}
+
+	function openDeleteModal() {
+		const id = $(this).data("id");
+		console.log("delete => ", id);
+
+		$("#delete-res-id").html(id);
+		$("#delete-modal").modal('show');
+	}
+
+
+		/* $(".btn-delete").click(function() {
 			const id = $(this).data("id");
 			console.log("delete => ", id);
 
 			$("#delete-res-id").html(id);
 			$("#delete-modal").modal('show');
-		})
+		}) */
 
-		$(".btn-update").click(function() {
+		/* $(".btn-update").click(function() {
 			const id = $(this).data("id");
 			console.log("update => ", id);
 
@@ -150,7 +189,7 @@
 			$("#header-update-res-title").html(title);
 
 			$("#modify-modal").modal('show');
-		});
+		}); */
 
 		$("#update-recipe").click(function() {
 
