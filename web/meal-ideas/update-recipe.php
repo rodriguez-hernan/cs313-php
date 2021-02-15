@@ -12,10 +12,20 @@ updateRecipe($id, $title, $description);
   <h5 class="card-title"><? echo $title; ?></h5>
   <p class="card-text"><? echo $description; ?></p>
 
-  <button type="button" class="btn btn-secondary btn-delete" data-id="<? echo $id; ?>">
+  <button
+    type="button"
+    class="btn btn-secondary btn-delete"
+    data-id="<? echo $id; ?>"
+    onclick="openDeleteModal('<? echo $id; ?>');"
+  >
     Delete
   </button>
-  <button type="button" class="btn btn-primary btn-update" data-id="<? echo $id; ?>">
+  <button
+    type="button"
+    class="btn btn-primary btn-update"
+    data-id="<? echo $id; ?>"
+    onclick="openUpdateModal('<? echo $id; ?>');"
+  >
     Modify
   </button>
 </div>
