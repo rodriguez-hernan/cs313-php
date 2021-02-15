@@ -63,7 +63,7 @@
 								type="button"
 								class="btn btn-secondary btn-delete"
 								data-id="<? echo $res["id"]; ?>"
-								onclick="openDeleteModal();"
+								onclick="openDeleteModal('<? echo $res['id']; ?>');"
 							>
 								Delete
 							</button>
@@ -71,7 +71,7 @@
 								type="button"
 								class="btn btn-primary btn-update"
 								data-id="<? echo $res["id"]; ?>"
-								onclick="openUpdateModal();"
+								onclick="openUpdateModal('<? echo $res['id']; ?>');"
 							>
 								Modify
 							</button>
@@ -136,14 +136,15 @@
   <?php include("../footer.php"); ?>
 	<script>
 
-	function openUpdateModal() {
-		const id = $(this).data("id");
+	function openUpdateModal(id) {
 		console.log("update => ", id);
 
 		$("#rec-id-update").val(id);
 
-		const title = $(this).siblings( ".card-title" ).text();
-		const description = $(this).siblings( ".card-text" ).text();
+		const card = $(`#card-${id}`);
+
+		const title = card.find( ".card-title" ).text();
+		const description = card.find( ".card-text" ).text();
 		
 		console.log("title", title)
 		console.log("description", description)
@@ -155,8 +156,7 @@
 		$("#modify-modal").modal('show');
 	}
 
-	function openDeleteModal() {
-		const id = $(this).data("id");
+	function openDeleteModal(id) {
 		console.log("delete => ", id);
 
 		$("#delete-res-id").html(id);
