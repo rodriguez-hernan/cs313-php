@@ -189,23 +189,23 @@ function updateRecipe($id, $title, $description) {
 function deleteRecipe($id) {
 	global $db;
 	// user - recipe
-	$sql = "DELETE FROM UserRecipe WHERE recipeid = '$id'";
-	$stmt = $db->prepare($sql);
+	$sqlUser = "DELETE FROM UserRecipe WHERE recipeid = '$id'";
+	$stmt = $db->prepare($sqlUser);
 	$stmt->execute();
 
 	// meal - recipe
-	$sql = "DELETE FROM RecipeMealTag WHERE recipeid = '$id'";
-	$stmt = $db->prepare($sql);
+	$sqlMeal = "DELETE FROM RecipeMealTag WHERE recipeid = '$id'";
+	$stmt = $db->prepare($sqlMeal);
 	$stmt->execute();
 
 	// ingredient - recipe
-	$sql = "DELETE FROM recipeIngredientTag WHERE recipeid = '$id'";
-	$stmt = $db->prepare($sql);
+	$sqlIng = "DELETE FROM recipeIngredientTag WHERE recipeid = '$id'";
+	$stmt = $db->prepare($sqlIng);
 	$stmt->execute();
 
 	// recipe
-	$sql = "DELETE FROM Recipe WHERE recipeid = '$id'";
-	$stmt = $db->prepare($sql);
+	$sqlRec = "DELETE FROM Recipe WHERE recipeid = '$id'";
+	$stmt = $db->prepare($sqlRec);
 	$stmt->execute();
 }
 
