@@ -188,9 +188,6 @@ function updateRecipe($id, $title, $description) {
 
 function deleteRecipe($id) {
 	global $db;
-	$sql = " DELETE FROM userrecipe WHERE recipeid=:id; ";
-	$sql = " DELETE FROM recipemealtag WHERE recipeid=:id; ";
-	$sql = " DELETE FROM recipeingredienttag WHERE recipeid=:id; ";
 	$sql = " DELETE FROM recipe WHERE recipeid=:id; ";
 
 	$stmt = $db->prepare($sql);
