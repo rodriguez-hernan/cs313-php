@@ -4,7 +4,7 @@
 
 	print_r($_POST);
 
-	if (isset($_POST) && isset($_POST["delete"])) {
+	if (isset($_POST) && $_POST["action"] == "delete") {
 		$id = $_POST["id"];
 		deleteRecipe($id);
 	}
