@@ -4,7 +4,7 @@
 	$user = ["id" => 1, "username" => "Russell Nelson", "email" => "russell_n@byui.edu"];
   $_SESSION["user"] = $user;
 
-	// print_r($_POST);
+	print_r($_POST);
 
 	$recipes = getAllRecipesByUserId($user["id"]);
 	$meals = getAllMeals();
