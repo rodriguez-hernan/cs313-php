@@ -188,17 +188,27 @@ function updateRecipe($id, $title, $description) {
 
 function deleteRecipe($id) {
 	global $db;
-	// user - recipe
+	$sql = " DELETE FROM userrecipe WHERE recipeid=:id; ";
+	$sql = " DELETE FROM recipemealtag WHERE recipeid=:id; ";
+	$sql = " DELETE FROM recipeingredienttag WHERE recipeid=:id; ";
+	$sql = " DELETE FROM recipe WHERE recipeid=:id; ";
+
+	$stmt = $db->prepare($sql);
+	$stmt->bindvalue(":id", $id, PDO::PARAM_INIT);
+	$stmt->execute();
+
+
+/*	// user - recipe, many to many
 	$sqlUser = "DELETE FROM UserRecipe WHERE recipeid = '$id'";
 	$stmt = $db->prepare($sqlUser);
 	$stmt->execute();
 
-	// meal - recipe
+	// meal - recipe, many to many
 	$sqlMeal = "DELETE FROM RecipeMealTag WHERE recipeid = '$id'";
 	$stmt = $db->prepare($sqlMeal);
 	$stmt->execute();
 
-	// ingredient - recipe
+	// ingredient - recipe, many to many
 	$sqlIng = "DELETE FROM recipeIngredientTag WHERE recipeid = '$id'";
 	$stmt = $db->prepare($sqlIng);
 	$stmt->execute();
@@ -207,6 +217,7 @@ function deleteRecipe($id) {
 	$sqlRec = "DELETE FROM Recipe WHERE recipeid = '$id'";
 	$stmt = $db->prepare($sqlRec);
 	$stmt->execute();
+	*/
 }
 
 ?>
