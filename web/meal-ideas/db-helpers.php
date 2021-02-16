@@ -188,7 +188,7 @@ function updateRecipe($id, $title, $description) {
 
 function deleteRecipe($id) {
 	global $db;
-	$sql = " DELETE FROM recipe WHERE recipeid=:id; ";
+	$sql = "DELETE FROM recipe WHERE recipeid=:id; ";
 
 	$stmt = $db->prepare($sql);
 	$stmt->bindvalue(":id", $id, PDO::PARAM_INIT);

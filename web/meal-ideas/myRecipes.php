@@ -198,7 +198,6 @@
 		const cardId = `#card-${id}`;
 		$.ajax({
 			type: "POST",
-			url: "update-recipe.php",
 			data: data,
 			success: function(result) {
 				$(cardId).remove();
