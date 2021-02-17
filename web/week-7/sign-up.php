@@ -65,7 +65,7 @@ function insertIntoDB($username, $password) {
           name="password"
           class="form-control"
           id="password"
-          pattern="^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$"
+          pattern="(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+){7,40}"
         >
       </div>
       <div class="mb-3">
