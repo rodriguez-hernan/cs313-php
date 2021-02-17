@@ -4,6 +4,7 @@ $db = get_db();
 print_r($_POST);
 
 $wrongPassword = "";
+$wrongFormatPassword = "";
 
 if(isset($_POST["submit"])) {
   $username = $_POST["userName"];
@@ -13,15 +14,19 @@ if(isset($_POST["submit"])) {
 
   $correctPassword = preg_match('/^\w{7,40}.*[0-9].*$/', $password);
 
-  echo "<br /> correct?  $correctPassword";
 
-  if ($password != $secondPassword) {
-    $wrongPassword = "*Password must match";
+  if (!$correctPassword) {
+    $wrongFormatPassword = "Password must contain at least 7 characters and 1 number";
   } else {
-    insertIntoDB($username, $passwordHash);
-    header('Location: ./sign-in.php');
-    die();
+    if ($password != $secondPassword) {
+      $wrongPassword = "*Password must match";
+    } else {
+      insertIntoDB($username, $passwordHash);
+      header('Location: ./sign-in.php');
+      die();
+    }
   }
+
 
 }
 
@@ -53,6 +58,7 @@ function insertIntoDB($username, $password) {
         <input type="text" class="form-control" id="userName" name="userName">
       </div>
       <div class="mb-3">
+        <span style="color:red;"><? echo $wrongFormatPassword; ?></span>
         <label for="password" class="form-label">Password</label>
         <input type="password" name="password" class="form-control" id="password">
       </div>
