@@ -1,4 +1,8 @@
 <?php
+require "dbConnection.php";
+$db = get_db();
+
+
 
 ?>
 
