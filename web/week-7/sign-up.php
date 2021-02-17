@@ -11,7 +11,7 @@ if(isset($_POST["submit"])) {
   $passwordHash = password_hash($password, PASSWORD_DEFAULT);
   $secondPassword = $_POST["confirm-password"];
 
-  $correctPassword = preg_match('^\w{7,40}.*[0-9].*$', $password);
+  $correctPassword = preg_match('/^\w{7,40}.*[0-9].*$/', $password);
 
   echo "<br /> correct?  $correctPassword";
 
