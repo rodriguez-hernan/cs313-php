@@ -12,7 +12,7 @@ if(isset($_POST["submit"])) {
   $passwordHash = password_hash($password, PASSWORD_DEFAULT);
   $secondPassword = $_POST["confirm-password"];
 
-  $correctPassword = preg_match('/^\w{7,40}.*[0-9].*$/', $password);
+  $correctPassword = preg_match('/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/', $password);
 
 
   if (!$correctPassword) {
@@ -47,7 +47,6 @@ function insertIntoDB($username, $password) {
 <head>
   <title>Login</title>
   <?php include("../header.php"); ?>
-  <link rel="stylesheet" href='./style.css'>
 </head>
 
 <body>
@@ -55,12 +54,19 @@ function insertIntoDB($username, $password) {
     <form method="POST">
       <div class="mb-3">
         <label for="userName" class="form-label">User Name</label>
-        <input type="text" class="form-control" id="userName" name="userName">
+        <input required type="text" class="form-control" id="userName" name="userName">
       </div>
       <div class="mb-3">
-        <span style="color:red;"><? echo $wrongFormatPassword; ?></span>
+        <p style="color:red;"><? echo $wrongFormatPassword; ?></p>
         <label for="password" class="form-label">Password</label>
-        <input type="password" name="password" class="form-control" id="password">
+        <input
+          required
+          type="password"
+          name="password"
+          class="form-control"
+          id="password"
+          pattern="^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$"
+        >
       </div>
       <div class="mb-3">
         
@@ -68,7 +74,7 @@ function insertIntoDB($username, $password) {
           Confirm password 
           <span style="color:red;"><? echo $wrongPassword; ?></span>
         </label>
-        <input type="password" name="confirm-password" class="form-control" id="confirm-password">
+        <input required type="password" name="confirm-password" class="form-control" id="confirm-password">
       </div>
       <input type="hidden" value="signIn" name="submit">
       <button type="submit" class="btn btn-primary">Submit</button>
