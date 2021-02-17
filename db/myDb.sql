@@ -34,6 +34,9 @@ create table UserRecipe(
 	recipeID int references Recipe(recipeID) NOT NULL
 );
 
+ALTER TABLE UserRecipe ADD FOREIGN KEY (recipeID)
+REFERENCES Recipe(recipeID) ON DELETE CASCADE;
+
 -- RecipeMealTag
 create table RecipeMealTag(
 	recipeMealID int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -41,12 +44,18 @@ create table RecipeMealTag(
 	mealTagID int references MealTag(mealTagID) NOT NULL
 );
 
+ALTER TABLE RecipeMealTag ADD FOREIGN KEY (recipeID)
+REFERENCES Recipe(recipeID) ON DELETE CASCADE;
+
 -- recipeIngredientTag
 create table recipeIngredientTag(
 	recipeIngredientID int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	ingredientTagID int references IngredientTag(ingredientTagID) NOT NULL,
 	recipeID int references Recipe(recipeID) NOT NULL
 );
+
+ALTER TABLE recipeIngredientTag ADD FOREIGN KEY (recipeID)
+REFERENCES Recipe(recipeID) ON DELETE CASCADE;
 
 -- add users
 insert into users (username, email) values ('Russell Nelson', 'russell_n@byui.edu');

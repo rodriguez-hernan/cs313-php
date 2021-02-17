@@ -16,6 +16,16 @@
 
 	$mealAsoc = getMealsAsocByRecipe($recipesArray);
 	$ingredientAsoc = getIngredientsAsocByRecipe($recipesArray);
+	
+	$masterArray = array();
+
+	$flagAll = true;
+/* 	if (isset($_POST['ingredient_list'])) {
+		$ing = $_POST['ingredient_list'];
+		foreach($ing as $key => $val) {
+			
+		}
+	} */
 
 	$randomRecipeCss = "no-recipe";
 	$formSubmitText = "Get idea";

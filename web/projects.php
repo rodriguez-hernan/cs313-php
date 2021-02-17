@@ -44,6 +44,7 @@ include("./header.php");
                         <ul>
                             <li><a href="./week-2/index.php">Week 2 - Client side practice</a></li>
                             <li><a href="./week-3/index.php">Week 3 - Php forms</a></li>
+                            <li><a href="./week-7/index.php">Week 7 - Login authentication</a></li>
                         </ul>
                     </div>
                 </div>
