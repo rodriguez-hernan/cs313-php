@@ -10,6 +10,7 @@ if(isset($_POST["submit"])) {
 
   insertIntoDB($username, $passwordHash);
   header('Location: ./sign-in.php');
+  die();
 }
 
 function insertIntoDB($username, $password) {
@@ -47,6 +48,9 @@ function insertIntoDB($username, $password) {
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
+    <div>
+      <a href="./sign-in.php">Sign in</a>
+    </div>
   </div>
   <?php include("../footer.php"); ?>
 </body>

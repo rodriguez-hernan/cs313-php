@@ -1,8 +1,14 @@
 <?php
 require "dbConnection.php";
+session_start();
 $db = get_db();
 
-
+if(isset($SESSION["username"])) {
+  $username = $SESSION["username"];
+} else {
+  header('Location: ./sign-in.php');
+  die();
+}
 
 ?>
 
@@ -17,7 +23,7 @@ $db = get_db();
 
 <body>
   <div class="container">
-		
+		<h1>Welcome <? echo $username; ?></h1>
 
   </div>
   <?php include("../footer.php"); ?>
