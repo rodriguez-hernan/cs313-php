@@ -3,8 +3,8 @@ require "dbConnection.php";
 session_start();
 $db = get_db();
 
-if(isset($SESSION["username"])) {
-  $username = $SESSION["username"];
+if(isset($_SESSION["username"])) {
+  $username = $_SESSION["username"];
 } else {
   header('Location: ./sign-in.php');
   die();
