@@ -195,7 +195,8 @@
 		$("#header-update-res-title").html(title);
 
 		$(".meal-checks input:checkbox").each(function(){
-			const mealId = $(this).val();
+			const mealId = parseInt($(this).val());
+
 			console.log("meald arr => ", recipesObj[id].meals);
 			const marked = recipesObj[id].meals.includes(mealId);
 			console.log("mealId", mealId);
