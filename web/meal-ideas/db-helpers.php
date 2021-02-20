@@ -178,7 +178,7 @@ function insertNewRecipe($title, $description, $meals, $ingredients, $userId) {
 	}
 }
 
-function updateRecipe($id, $title, $description) {
+function updateRecipe($id, $title, $description, $meals, $ingredients, $userId) {
 	global $db;
 	$sql = "UPDATE Recipe SET title = '$title', processdescription = '$description' WHERE recipeid = $id";
 
