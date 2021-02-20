@@ -8,6 +8,7 @@ $wrongFormatPassword = "";
 
 if(isset($_POST["submit"])) {
   $username = $_POST["userName"];
+  $email = $_POST["email"];
   $password = $_POST["password"];
   $passwordHash = password_hash($password, PASSWORD_DEFAULT);
   $secondPassword = $_POST["confirm-password"];
@@ -21,7 +22,7 @@ if(isset($_POST["submit"])) {
     if ($password != $secondPassword) {
       $wrongPassword = "*Password must match";
     } else {
-      insertIntoDB($username, $passwordHash);
+      insertIntoDB($username, $passwordHash, $email);
       header('Location: ./sign-in.php');
       die();
     }
@@ -30,12 +31,13 @@ if(isset($_POST["submit"])) {
 
 }
 
-function insertIntoDB($username, $password) {
+function insertIntoDB($username, $password, $email) {
   global $db;
-	$sql = "INSERT INTO userslogin (username, password) values(:username, :password)";
+	$sql = "INSERT INTO users (username, password, email) values(:username, :password, :email)";
 	$stmt = $db->prepare($sql);
 	$stmt->bindValue(":username", $username, PDO::PARAM_STR);
   $stmt->bindValue(":password", $password, PDO::PARAM_STR);
+  $stmt->bindValue(":email", $email, PDO::PARAM_STR);
   $stmt->execute();
 }
 
@@ -55,6 +57,10 @@ function insertIntoDB($username, $password) {
       <div class="mb-3">
         <label for="userName" class="form-label">User Name</label>
         <input required type="text" class="form-control" id="userName" name="userName">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input required type="email" class="form-control" id="email" name="email">
       </div>
       <div class="mb-3">
         <p style="color:red;"><? echo $wrongFormatPassword; ?></p>

@@ -1,8 +1,16 @@
 <?php
   session_start();
 	include("db-helpers.php");
-	$user = ["id" => 1, "username" => "Russell Nelson", "email" => "russell_n@byui.edu"];
-  $_SESSION["user"] = $user;
+
+	if(isset($_SESSION["username"])) {
+		$username = $_SESSION["username"];
+	} else {
+		header('Location: ./sign-in.php');
+		die();
+	}
+
+/* 	$user = ["id" => 1, "username" => "Russell Nelson", "email" => "russell_n@byui.edu"];
+  $_SESSION["user"] = $user; */
 
 	print_r($_POST);
 
