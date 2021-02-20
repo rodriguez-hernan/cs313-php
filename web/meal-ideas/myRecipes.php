@@ -229,7 +229,7 @@
 		let meals = [];
 		$(".meal-checks input:checkbox").each(function() {
 			if ($(this).prop('checked')) {
-				meals.pusn($(this).val());	
+				meals.push($(this).val());	
 			}
 		});
 		meals = meals.length ? meals.join(",") : "";
@@ -237,7 +237,7 @@
 		let ingredients = [];
 		$(".ingredient-checks input:checkbox").each(function() {
 			if ($(this).prop('checked')) {
-				ingredients.pusn($(this).val());	
+				ingredients.push($(this).val());	
 			}
 		})
 		ingredients = ingredients.length ? ingredients.join(",") : "";
