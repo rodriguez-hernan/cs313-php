@@ -13,8 +13,11 @@
 	$recipes = getAllRecipesByUserId($userId);
 
 	$recipesArray = getRecipeIngredientMeals($recipes, $userId);
+	$meals = getAllMeals();
+	$ingredients = getAllIngredients();
 
 	print_r($recipesArray);
+
 ?>
 
 <!DOCTYPE html>
@@ -125,6 +128,37 @@
 								<label for="recipe-process" class="form-label">Recipe steps or comments</label>
 								<textarea class="form-control" name="description" rows="4" cols="50" id="recipe-process"></textarea>
 							</div>
+							<div class="mt-3 filters">
+								<div class="meal-checks">
+										<h4>Meals</h4>
+										<?
+										foreach($meals as $key => $val) {
+											$id = "meal-check-" . $key;
+											
+											?>
+												<div class="form-check">
+													<input class="form-check-input" name="meal_list[]" type="checkbox" id="<? echo $id ?>" value="<? echo $key ?>">
+													<label class="form-check-label" for="<? echo $id ?>"><? echo $val ?></label>
+												</div>
+											<?
+										}
+									?>
+								</div>
+								<div class="ingredient-checks">
+									<h4>Ingredients</h4>
+									<?
+										foreach($ingredients as $key => $val) {
+											$id = "ingredient-check-" . $key;
+											?>
+												<div class="form-check">
+													<input class="form-check-input" name="ingredient_list[]" type="checkbox" id="<? echo $id ?>" value="<? echo $key ?>">
+													<label class="form-check-label" for="<? echo $id ?>"><? echo $val ?></label>
+												</div>
+											<?
+										}
+									?>
+								</div>
+							</div>
 						</div>
 						<div class="modal-footer">
 							<input type="hidden" id="rec-id-update" value="">
@@ -139,10 +173,12 @@
   </div>
   <?php include("../footer.php"); ?>
 	<script>
+	var recipesJson = "<? echo json_encode($recipesArray); ?>";
 
 	function openUpdateModal(id) {
 		console.log("update => ", id);
-
+		console.log("recipesJson => ", recipesJson);
+		
 		$("#rec-id-update").val(id);
 
 		const card = $(`#card-${id}`);
