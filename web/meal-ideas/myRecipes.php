@@ -173,12 +173,12 @@
   </div>
   <?php include("../footer.php"); ?>
 	<script>
-	var recipesJson = "<? echo json_encode($recipesArray); ?>";
+	var recipesJson = '<? echo json_encode($recipesArray); ?>';
 
 	function openUpdateModal(id) {
 		console.log("update => ", id);
 		console.log("recipesJson => ", recipesJson);
-		
+
 		$("#rec-id-update").val(id);
 
 		const card = $(`#card-${id}`);
