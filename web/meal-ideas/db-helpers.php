@@ -154,10 +154,10 @@ function insertNewRecipe($title, $description, $meals, $ingredients, $userId) {
 	$stmt2 = $db->prepare($sqlUser);
 	$stmt2->execute();
 
-	$sqlMeals = "INSERT INTO RecipeMealTag (recipeid, mealtagid) values ";
+	$sqlMeals = "INSERT INTO RecipeMealTag (recipeid, mealtagid, userid) values ";
 	if ($meals) {
 		foreach ($meals as $key => $value) {
-			$sqlMeals = $sqlMeals . "('$id', '$value'),";
+			$sqlMeals = $sqlMeals . "('$id', '$value', '$userId'),";
 		}
 
 		$sqlMeals = substr($sqlMeals, 0, -1);
@@ -166,10 +166,10 @@ function insertNewRecipe($title, $description, $meals, $ingredients, $userId) {
 		$stmt3->execute();
 	}
 
-	$sqlIngredients = "INSERT INTO recipeIngredientTag (recipeid, ingredienttagid) values ";
+	$sqlIngredients = "INSERT INTO recipeIngredientTag (recipeid, ingredienttagid, userid) values ";
 	if ($ingredients) {
 		foreach ($ingredients as $key => $value) {
-			$sqlIngredients = $sqlIngredients . "('$id', '$value'),";
+			$sqlIngredients = $sqlIngredients . "('$id', '$value', '$userId'),";
 		}
 		$sqlIngredients = substr($sqlIngredients, 0, -1);
 		//echo "<br/> sqlIngredients: " . $sqlIngredients;
