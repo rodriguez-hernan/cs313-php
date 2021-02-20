@@ -7,12 +7,16 @@
 		die();
 	}
 
-/* 	$user = ["id" => 1, "username" => "Russell Nelson", "email" => "russell_n@byui.edu"];
-  $_SESSION["user"] = $user; */
-
+	// $user = ["id" => 1, "username" => "Russell Nelson", "email" => "russell_n@byui.edu"];
+	$email = $_SESSION["email"];
+	$userName = $_SESSION["username"];
+	$userId = $_SESSION["userId"];
+  
+	// print_r($_SESSION);
+	echo "<br />";
 	print_r($_POST);
 
-	$recipes = getAllRecipesByUserId($user["id"]);
+	$recipes = getAllRecipesByUserId($userId);
 	$meals = getAllMeals();
 	$ingredients = getAllIngredients();
 	$recipesArray = array();
