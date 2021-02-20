@@ -4,8 +4,8 @@ $db = get_db();
 session_start();
 $wrongPassword = false;
 
-$passwordTest = password_hash("abc123", PASSWORD_DEFAULT);
-echo "passwordTest $passwordTest <br />";
+/* $passwordTest = password_hash("abc123", PASSWORD_DEFAULT);
+echo "passwordTest $passwordTest <br />"; */
 
 if(isset($_POST["submit"])) {
   $email = $_POST["email"];
