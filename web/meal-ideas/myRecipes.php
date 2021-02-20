@@ -196,11 +196,19 @@
 
 		$(".meal-checks input:checkbox").each(function(){
 			const mealId = parseInt($(this).val());
+			let marked = false;
+			if (recipesObj[id].meals) {
+				marked =recipesObj[id].meals.includes(mealId);
+			}
+			marked ? $(this).prop( "checked", true) : $(this).prop( "checked", false);
+		});
 
-			console.log("meald arr => ", recipesObj[id].meals);
-			const marked = recipesObj[id].meals.includes(mealId);
-			console.log("mealId", mealId);
-			console.log("marked?", marked);
+		$(".ingredient-checks input:checkbox").each(function(){
+			const ingredientId = parseInt($(this).val());
+			let marked = false;
+			if (recipesObj[id].ingredients) {
+				marked = recipesObj[id].ingredients.includes(ingredientId);
+			}
 			marked ? $(this).prop( "checked", true) : $(this).prop( "checked", false);
 		});
 
