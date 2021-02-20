@@ -177,7 +177,8 @@
 
 	function openUpdateModal(id) {
 		console.log("update => ", id);
-		console.log("recipesJson => ", recipesJson);
+		const recipesObj = JSON.parse(recipesJson);
+		console.log("recipesObj => ", recipesObj);
 
 		$("#rec-id-update").val(id);
 
@@ -192,6 +193,12 @@
 		$("#recipe-process").val(description);
 		$("#update-res-title").val(title);
 		$("#header-update-res-title").html(title);
+
+		$(".meal-checks input:checkbox").each(function(){
+			const mealId = $(this).val();
+			const marked = recipesObj[id].meals.includes(mealId);
+			$(this).prop( "checked", marked);
+		})
 
 		$("#modify-modal").modal('show');
 	}
