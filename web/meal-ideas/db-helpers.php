@@ -199,15 +199,14 @@ function getRecipeIngredientMeals($recipes, $userid) {
 	$master = array();
 	foreach ($recipes as $key => $val) {
 		$id = $val["id"];
+
 		$master[$id] = $val;
 
 		// add ingredient array
 		$sql = "SELECT * FROM recipeIngredientTag WHERE recipeid='$id' AND userid='$userid' ";
 		$stmt = $db->prepare($sql);
 		$stmt->execute();
-		$row = $statement->fetch(PDO::FETCH_ASSOC);
-
-		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 		{
 			$master[$id]["ingredients"][] = $row['ingredienttagid'];
 		}
@@ -216,9 +215,7 @@ function getRecipeIngredientMeals($recipes, $userid) {
 		$sql = "SELECT * FROM RecipeMealTag WHERE recipeid='$id' AND userid='$userid' ";
 		$stmt = $db->prepare($sql);
 		$stmt->execute();
-		$row = $statement->fetch(PDO::FETCH_ASSOC);
-
-		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 		{
 			$master[$id]["meals"][] = $row['mealtagid'];
 		}
