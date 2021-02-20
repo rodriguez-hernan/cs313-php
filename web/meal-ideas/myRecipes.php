@@ -14,7 +14,7 @@
 
 	$recipesArray = getRecipeIngredientMeals($recipes);
 
-	print_r($recipes);
+	// print_r($recipes);
 ?>
 
 <!DOCTYPE html>

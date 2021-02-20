@@ -197,8 +197,11 @@ function getRecipeIngredientMeals($recipes) {
 	// global $db;
 
 	echo "<br/>";
-	print_r($recipes);
-	echo "<br/>";
+	foreach ($recipes as $key => $val) {
+
+		echo $val["title"];
+		echo "<br/>";
+	}
 	/* $sql = "SELECT FROM recipeIngredientTag WHERE recipeid='$id' ";
 	$stmt = $db->prepare($sql);
 	$stmt->execute(); */
