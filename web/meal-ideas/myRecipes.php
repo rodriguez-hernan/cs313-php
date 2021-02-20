@@ -178,17 +178,13 @@
 	function openUpdateModal(id) {
 		console.log("update => ", id);
 		const recipesObj = JSON.parse(recipesJson);
-		console.log("recipesObj => ", recipesObj);
-
+		
 		$("#rec-id-update").val(id);
 
 		const card = $(`#card-${id}`);
 
 		const title = card.find( ".card-title" ).text();
 		const description = card.find( ".card-text" ).text();
-		
-		console.log("title", title)
-		console.log("description", description)
 		
 		$("#recipe-process").val(description);
 		$("#update-res-title").val(title);
@@ -229,8 +225,25 @@
 		const title = $("#update-res-title").val();
 		const id = $("#rec-id-update").val();
 		const action = "update";
+
+		let meals = [];
+		$(".meal-checks input:checkbox").each(function() {
+			if ($(this).prop('checked')) {
+				meals.pusn($(this).val());	
+			}
+		});
+		meals = meals.length ? meals.join(",") : "";
+
+		let ingredients = [];
+		$(".ingredient-checks input:checkbox").each(function() {
+			if ($(this).prop('checked')) {
+				ingredients.pusn($(this).val());	
+			}
+		})
+		ingredients = ingredients.length ? ingredients.join(",") : "";
+
 		const data = {
-			id, title, description, action,
+			id, title, description, action, meals, ingredients
 		}
 		// console.table("UPDATE", data );
 
