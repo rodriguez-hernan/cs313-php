@@ -193,20 +193,40 @@ function deleteRecipe($id) {
 	$stmt->execute();
 }
 
-function getRecipeIngredientMeals($recipes) {
-	// global $db;
+function getRecipeIngredientMeals($recipes, $userid) {
+	global $db;
 
-	echo "<br/>";
+	$master = array();
 	foreach ($recipes as $key => $val) {
+		$id = $val["id"];
+		$master[$id] = $val;
 
-		echo $val["title"];
-		echo "<br/>";
+		// add ingredient array
+		$sql = "SELECT * FROM recipeIngredientTag WHERE recipeid='$id' AND userid='$userid' ";
+		$stmt = $db->prepare($sql);
+		$stmt->execute();
+		$row = $statement->fetch(PDO::FETCH_ASSOC);
+
+		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		{
+			$master[$id]["ingredients"][] = $row['ingredienttagid'];
+		}
+
+		// add meals array
+		$sql = "SELECT * FROM RecipeMealTag WHERE recipeid='$id' AND userid='$userid' ";
+		$stmt = $db->prepare($sql);
+		$stmt->execute();
+		$row = $statement->fetch(PDO::FETCH_ASSOC);
+
+		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		{
+			$master[$id]["meals"][] = $row['mealtagid'];
+		}
+
 	}
-	/* $sql = "SELECT FROM recipeIngredientTag WHERE recipeid='$id' ";
-	$stmt = $db->prepare($sql);
-	$stmt->execute(); */
 
-	return " ";
+
+	return $master;
 }
 
 ?>
