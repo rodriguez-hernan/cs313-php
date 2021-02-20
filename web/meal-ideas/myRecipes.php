@@ -197,8 +197,10 @@
 		$(".meal-checks input:checkbox").each(function(){
 			const mealId = $(this).val();
 			const marked = recipesObj[id].meals.includes(mealId);
-			$(this).prop( "checked", marked);
-		})
+			console.log("mealId", mealId);
+			console.log("marked?", marked);
+			marked ? $(this).prop( "checked", true) : $(this).prop( "checked", false);
+		});
 
 		$("#modify-modal").modal('show');
 	}
