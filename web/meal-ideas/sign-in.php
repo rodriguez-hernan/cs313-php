@@ -12,7 +12,7 @@ if(isset($_POST["submit"])) {
   $password = $_POST["password"];
   $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-  $user = getUserAndPassword($username);
+  $user = getUserByEmail($email);
 
   if (password_verify($password, $user["password"])) {
     $_SESSION["email"] = $username;
@@ -26,7 +26,7 @@ if(isset($_POST["submit"])) {
   }
 }
 
-function getUserAndPassword($email) {
+function getUserByEmail($email) {
   global $db;
 	$sql = "SELECT * FROM users WHERE email=:email";
 	$stmt = $db->prepare($sql);
