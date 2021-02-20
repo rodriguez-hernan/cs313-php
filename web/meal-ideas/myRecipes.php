@@ -12,7 +12,9 @@
 	$userId = $_SESSION["userId"];
 	$recipes = getAllRecipesByUserId($userId);
 
-	// print_r($recipes);
+	$recipesArray = getRecipeIngredientMeals($recipes);
+
+	print_r($recipes);
 ?>
 
 <!DOCTYPE html>

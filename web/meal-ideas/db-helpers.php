@@ -193,4 +193,17 @@ function deleteRecipe($id) {
 	$stmt->execute();
 }
 
+function getRecipeIngredientMeals($recipes) {
+	// global $db;
+
+	echo "<br/>";
+	print_r($recipes);
+	echo "<br/>";
+	/* $sql = "SELECT FROM recipeIngredientTag WHERE recipeid='$id' ";
+	$stmt = $db->prepare($sql);
+	$stmt->execute(); */
+
+	return " ";
+}
+
 ?>
