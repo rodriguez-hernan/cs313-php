@@ -7,13 +7,10 @@
 		die();
 	}
 
-	// $user = ["id" => 1, "username" => "Russell Nelson", "email" => "russell_n@byui.edu"];
 	$email = $_SESSION["email"];
 	$userName = $_SESSION["username"];
 	$userId = $_SESSION["userId"];
   
-	print_r($_SESSION);
-	echo "<br />";
 	print_r($_POST);
 
 	$recipes = getAllRecipesByUserId($userId);

@@ -1,15 +1,15 @@
 <?php
   session_start();
   include("db-helpers.php");
-	$user = $_SESSION["user"];
+	$userId = $_SESSION["userId"];
 
-	if (isset($_POST['submit']) && $user) {
+	if (isset($_POST['submit']) && $userId) {
 		$title = $_POST['title'];
 		$description = $_POST['description'];
 		$meal_list = $_POST['meal_list'];
 		$ingredient_list = $_POST['ingredient_list'];
 		
-		insertNewRecipe($title, $description, $meal_list, $ingredient_list, $user["id"]);
+		insertNewRecipe($title, $description, $meal_list, $ingredient_list, $userId);
 		header("Location: ./myRecipes.php");
 		exit();
 	}

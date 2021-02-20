@@ -9,8 +9,8 @@
 		deleteRecipe($id);
 	}
 
-	$user = $_SESSION["user"];
-	$recipes = getAllRecipesByUserId($user["id"]);
+	$userId = $_SESSION["userId"];
+	$recipes = getAllRecipesByUserId($userId);
 
 	// print_r($recipes);
 ?>
