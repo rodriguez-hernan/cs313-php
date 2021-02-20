@@ -15,7 +15,7 @@ if(isset($_POST["submit"])) {
   $user = getUserByEmail($email);
 
   if (password_verify($password, $user["password"])) {
-    $_SESSION["email"] = $username;
+    $_SESSION["email"] = $email;
     $_SESSION["username"] = $user["username"];
     $_SESSION["userId"] = $user["id"];
 

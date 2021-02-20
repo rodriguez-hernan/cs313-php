@@ -2,9 +2,7 @@
   session_start();
 	include("db-helpers.php");
 
-	if(isset($_SESSION["username"])) {
-		$username = $_SESSION["username"];
-	} else {
+	if(!isset($_SESSION["username"])) {
 		header('Location: ./sign-in.php');
 		die();
 	}
