@@ -17,7 +17,7 @@ if(isset($_POST["submit"])) {
   if (password_verify($password, $user["password"])) {
     $_SESSION["email"] = $email;
     $_SESSION["username"] = $user["username"];
-    $_SESSION["userId"] = $user["id"];
+    $_SESSION["userId"] = $user["userid"];
 
     header('Location: ./index.php');
     die();
