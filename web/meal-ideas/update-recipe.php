@@ -16,8 +16,6 @@ echo "<br/> $ingredients <br/>"; */
 
 updateRecipe($id, $title, $description, $meals, $ingredients, $userId);
 
-$meals = getAllMeals();
-$ingredients = getAllIngredients();
 ?>
 
 <div class="card-body">
