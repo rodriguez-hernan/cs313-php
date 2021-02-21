@@ -6,6 +6,7 @@ create table Users (
 	userName varchar(30) NOT NULL,
 	email varchar(30) UNIQUE NOT NULL,
 )
+ALTER TABLE Users ADD password varchar(255) NOT NULL;
 
 -- MealTag
 create table MealTag(
@@ -46,6 +47,7 @@ create table RecipeMealTag(
 
 ALTER TABLE RecipeMealTag ADD FOREIGN KEY (recipeID)
 REFERENCES Recipe(recipeID) ON DELETE CASCADE;
+ALTER TABLE RecipeMealTag ADD userID int references Users(userID);
 
 -- recipeIngredientTag
 create table recipeIngredientTag(
@@ -56,6 +58,7 @@ create table recipeIngredientTag(
 
 ALTER TABLE recipeIngredientTag ADD FOREIGN KEY (recipeID)
 REFERENCES Recipe(recipeID) ON DELETE CASCADE;
+ALTER TABLE recipeIngredientTag ADD userID int references Users(userID);
 
 -- add users
 insert into users (username, email) values ('Russell Nelson', 'russell_n@byui.edu');
