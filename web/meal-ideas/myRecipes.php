@@ -2,8 +2,6 @@
   session_start();
 	include("db-helpers.php");
 
-	print_r($_POST);
-
 	if (isset($_POST) && $_POST["action"] == "delete") {
 		$id = $_POST["id"];
 		deleteRecipe($id);
@@ -15,8 +13,6 @@
 	$recipesArray = getRecipeIngredientMeals($recipes, $userId);
 	$meals = getAllMeals();
 	$ingredients = getAllIngredients();
-
-	print_r($recipesArray);
 
 ?>
 
@@ -245,7 +241,6 @@
 		const data = {
 			id, title, description, action, meals, ingredients
 		}
-		// console.table("UPDATE", data );
 
 		const cardId = `#card-${id}`;
 		$.ajax({

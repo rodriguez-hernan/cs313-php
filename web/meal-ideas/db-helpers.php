@@ -172,7 +172,6 @@ function insertNewRecipe($title, $description, $meals, $ingredients, $userId) {
 			$sqlIngredients = $sqlIngredients . "('$id', '$value', '$userId'),";
 		}
 		$sqlIngredients = substr($sqlIngredients, 0, -1);
-		//echo "<br/> sqlIngredients: " . $sqlIngredients;
 		$stmt4 = $db->prepare($sqlIngredients);
 		$stmt4->execute();
 	}
@@ -191,14 +190,15 @@ function updateRecipe($id, $title, $description, $meals, $ingredients, $userId) 
 	$stmt2->execute();
 	// insert into RecipeMealTag $id $userId and foreach $meals
 	$mealsArray = explode(',', strval($meals));
-	$sql3 = "INSERT INTO RecipeMealTag (recipeid, mealtagid, userid) VALUES ";
-	foreach($mealsArray as $meal) {
-		$sql3 =  $sql3 . "($id, $meal, $userId), ";
+	if (count($mealsArray) > 0) {
+		$sql3 = "INSERT INTO RecipeMealTag (recipeid, mealtagid, userid) VALUES ";
+		foreach($mealsArray as $meal) {
+			$sql3 =  $sql3 . "($id, $meal, $userId), ";
+		}
+		$sql3 = substr($sql3, 0, -2);
+		$stmt3 = $db->prepare($sql3);
+		$stmt3->execute();
 	}
-	$sql3 = substr($sql3, 0, -2);
-	echo $sql3;
-	$stmt3 = $db->prepare($sql3);
-	$stmt3->execute();
 
 	// delete all recipeIngredientTag where recipeId is $id	
 	$sql4 = "DELETE FROM recipeIngredientTag WHERE recipeid='$id' ";
@@ -206,14 +206,15 @@ function updateRecipe($id, $title, $description, $meals, $ingredients, $userId) 
 	$stmt4->execute();
 	// insert into recipeIngredientTag $id $userId and foreach $ingredients
 	$ingredientsArray = explode(',', strval($ingredients));
-	$sql5 = "INSERT INTO recipeIngredientTag (recipeid, ingredienttagid, userid) VALUES ";
-	foreach($ingredientsArray as $ing) {
-		$sql5 = $sql5 . "($id, $ing, $userId), ";
+	if (count($ingredientsArray) > 0) {
+		$sql5 = "INSERT INTO recipeIngredientTag (recipeid, ingredienttagid, userid) VALUES ";
+		foreach($ingredientsArray as $ing) {
+			$sql5 = $sql5 . "($id, $ing, $userId), ";
+		}
+		$sql5 = substr($sql5, 0, -2);
+		$stmt5 = $db->prepare($sql5);
+		$stmt5->execute();
 	}
-	$sql5 = substr($sql5, 0, -2);
-	echo $sql5;
-	$stmt5 = $db->prepare($sql5);
-	$stmt5->execute();
 
 }
 
