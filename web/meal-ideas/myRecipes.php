@@ -255,6 +255,7 @@
 			success: function(result) {
 				$(cardId).empty().append(result);
 				$("#modify-modal").modal('hide');
+				location.reload(); 
 			},
 		});
 

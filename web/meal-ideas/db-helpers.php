@@ -180,10 +180,36 @@ function insertNewRecipe($title, $description, $meals, $ingredients, $userId) {
 
 function updateRecipe($id, $title, $description, $meals, $ingredients, $userId) {
 	global $db;
-	$sql = "UPDATE Recipe SET title = '$title', processdescription = '$description' WHERE recipeid = $id";
+	$sql1 = "UPDATE Recipe SET title = '$title', processdescription = '$description' WHERE recipeid = $id";
 
-	$stmt2 = $db->prepare($sql);
+	$stmt1 = $db->prepare($sql1);
+	$stmt1->execute();
+
+	// delete all RecipeMealTag where recipeId is $id
+	$sql2 = "DELETE FROM RecipeMealTag WHERE recipeId='$id' ";
+	$stmt2 = $db->prepare($sql2);
 	$stmt2->execute();
+	// insert into RecipeMealTag $id $userId and foreach $meals
+	$mealsArray = explode(',', $meals);
+	$sql3 = "INSERT INTO RecipeMealTag (recipeId, mealtagid, userid) VALUES ";
+	foreach($mealsArray as $meal) {
+		$sql3 .= "($id, $meal, $userId) ";
+	}
+	$stmt3 = $db->prepare($sql3);
+	$stmt3->execute();
+	// delete all recipeIngredientTag where recipeId is $id	
+	$sql4 = "DELETE FROM recipeIngredientTag WHERE recipeId='$id' ";
+	$stmt4 = $db->prepare($sql4);
+	$stmt4->execute();
+	// insert into recipeIngredientTag $id $userId and foreach $ingredients
+	$ingredientsArray = explode(',', $ingredients);
+	$sql5 = "INSERT INTO recipeIngredientTag (recipeId, ingredienttagid, userid) VALUES ";
+	foreach($ingredientsArray as $ing) {
+		$sql5 .= "($id, $ing, $userId) ";
+	}
+	$stmt5 = $db->prepare($sql5);
+	$stmt5->execute();
+
 }
 
 function deleteRecipe($id) {
