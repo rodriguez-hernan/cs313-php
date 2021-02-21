@@ -190,10 +190,10 @@ function updateRecipe($id, $title, $description, $meals, $ingredients, $userId) 
 	$stmt2 = $db->prepare($sql2);
 	$stmt2->execute();
 	// insert into RecipeMealTag $id $userId and foreach $meals
-	$mealsArray = explode(',', $meals);
+	$mealsArray = explode(',', strval($meals));
 	$sql3 = "INSERT INTO RecipeMealTag (recipeId, mealtagid, userid) VALUES ";
 	foreach($mealsArray as $meal) {
-		$sql3 .= "($id, $meal, $userId) ";
+		$sql3 =  $sql3 . "($id, $meal, $userId) ";
 	}
 	$stmt3 = $db->prepare($sql3);
 	$stmt3->execute();
@@ -202,10 +202,10 @@ function updateRecipe($id, $title, $description, $meals, $ingredients, $userId) 
 	$stmt4 = $db->prepare($sql4);
 	$stmt4->execute();
 	// insert into recipeIngredientTag $id $userId and foreach $ingredients
-	$ingredientsArray = explode(',', $ingredients);
+	$ingredientsArray = explode(',', strval($ingredients));
 	$sql5 = "INSERT INTO recipeIngredientTag (recipeId, ingredienttagid, userid) VALUES ";
 	foreach($ingredientsArray as $ing) {
-		$sql5 .= "($id, $ing, $userId) ";
+		$sql5 = $sql5 . "($id, $ing, $userId) ";
 	}
 	$stmt5 = $db->prepare($sql5);
 	$stmt5->execute();
