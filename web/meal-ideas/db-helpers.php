@@ -193,10 +193,13 @@ function updateRecipe($id, $title, $description, $meals, $ingredients, $userId) 
 	$mealsArray = explode(',', strval($meals));
 	$sql3 = "INSERT INTO RecipeMealTag (recipeId, mealtagid, userid) VALUES ";
 	foreach($mealsArray as $meal) {
-		$sql3 =  $sql3 . "($id, $meal, $userId) ";
+		$sql3 =  $sql3 . "($id, $meal, $userId), ";
 	}
+	$sql3 = substr($sql3, 0, -1);
+	echo $sql3;
 	$stmt3 = $db->prepare($sql3);
 	$stmt3->execute();
+
 	// delete all recipeIngredientTag where recipeId is $id	
 	$sql4 = "DELETE FROM recipeIngredientTag WHERE recipeId='$id' ";
 	$stmt4 = $db->prepare($sql4);
@@ -205,8 +208,10 @@ function updateRecipe($id, $title, $description, $meals, $ingredients, $userId) 
 	$ingredientsArray = explode(',', strval($ingredients));
 	$sql5 = "INSERT INTO recipeIngredientTag (recipeId, ingredienttagid, userid) VALUES ";
 	foreach($ingredientsArray as $ing) {
-		$sql5 = $sql5 . "($id, $ing, $userId) ";
+		$sql5 = $sql5 . "($id, $ing, $userId), ";
 	}
+	$sql5 = substr($sql5, 0, -1);
+	echo $sql5;
 	$stmt5 = $db->prepare($sql5);
 	$stmt5->execute();
 
